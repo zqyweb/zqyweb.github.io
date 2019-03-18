@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      你好 | Hexo
+      水平垂直居中 | Hexo
     
   </title>
   <meta name="author" content="John Doe">
@@ -111,7 +111,7 @@
 				<!-- Page title -->
 				<p>
 					
-						当前文章&nbsp;:&nbsp;《你好》
+						当前文章&nbsp;:&nbsp;《水平垂直居中》
 					
 				</p>
 				<!-- Progress bar -->
@@ -270,8 +270,8 @@
 	
 	<div class="article-title">
 		
-	<a href="/2019/03/15/你好/" itemprop="url">
-		你好
+	<a href="/2019/03/15/水平垂直居中/" itemprop="url">
+		水平垂直居中
 	</a>
 
 	</div>
@@ -280,16 +280,16 @@
 		<span>
 			
 	发布于
-	<a href="/2019/03/15/你好/" itemprop="url">
-		<time datetime="2019-03-15T02:11:35.000Z" itemprop="datePublished">
+	<a href="/2019/03/15/水平垂直居中/" itemprop="url">
+		<time datetime="2019-03-15T02:11:35.111Z" itemprop="datePublished">
 	  		2019-03-15
 	  </time>
 	</a> 
 
 	/
 	更新于
-	<a href="/2019/03/15/你好/" itemprop="url">
-		<time datetime="2019-03-15T02:11:35.000Z" itemprop="dateUpdated">
+	<a href="/2019/03/15/水平垂直居中/" itemprop="url">
+		<time datetime="2019-03-15T02:11:35.111Z" itemprop="dateUpdated">
 	  		2019-03-15
 	  </time>
 	</a> 	
@@ -303,7 +303,7 @@
 		/
 		
 
-    <span class="leancloud_visitors" id="/2019/03/15/你好/_visitors" data-url="/2019/03/15/你好/" data-title="你好">
+    <span class="leancloud_visitors" id="/2019/03/15/水平垂直居中/_visitors" data-url="/2019/03/15/水平垂直居中/" data-title="水平垂直居中">
         热度
         <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
     </span>
@@ -312,7 +312,7 @@
 
 
 
-    <span class="leancloud_likes" id="/2019/03/15/你好/_likes" data-url="/2019/03/15/你好/" data-title="你好" rel="unlike">
+    <span class="leancloud_likes" id="/2019/03/15/水平垂直居中/_likes" data-url="/2019/03/15/水平垂直居中/" data-title="水平垂直居中" rel="unlike">
         喜欢
         <i class="fa fa-heart"></i>
         <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
@@ -321,7 +321,193 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<p>你好，world!</p>
+		<h2 id="文字水平垂直居中"><a href="#文字水平垂直居中" class="headerlink" title="文字水平垂直居中"></a>文字水平垂直居中</h2><h3 id="一行文字的水平垂直居中对齐方式"><a href="#一行文字的水平垂直居中对齐方式" class="headerlink" title="一行文字的水平垂直居中对齐方式"></a>一行文字的水平垂直居中对齐方式</h3><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;1-水平垂直居中&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        div{
+            height: 200px;
+            width: 200px;
+            border: 1px solid #333;
+            text-align: center;/*块级元素内文本的水平对齐方式*/
+        }
+        span{
+            line-height: 200px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;
+        &lt;span&gt;一行文本水平居中显示&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>显示结果:<img src="https://i.imgur.com/TB5wxj1.jpg" alt="一行文字水平居中显示">    </p>
+<h3 id="块级元素水平垂直居中显示方法一：absolute-transform"><a href="#块级元素水平垂直居中显示方法一：absolute-transform" class="headerlink" title="块级元素水平垂直居中显示方法一：absolute+transform"></a>块级元素水平垂直居中显示方法一：absolute+transform</h3><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;2-块级元素水平垂直居中-absolute+transform&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        .parent{
+            width: 400px;
+            height: 400px;
+            border:1px solid #ccc;
+            position: relative;
+        }
+        .child{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #333;
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);        /* IE 9 */
+            -webkit-transform: translate(-50%,-50%);    /* Safari and Chrome */
+            -o-transform: translate(-50%,-50%);        /* Opera */
+            -moz-transform: translate(-50%,-50%);        /* Firefox */
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;parent&quot;&gt;
+        &lt;div class=&quot;child&quot;&gt;
+            多行文字水平垂直居中显示
+            &lt;br&gt;使用absolute+transform方法
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>解释：绝对定位元素的定位基准点是其有定位元素的祖先元素而translate要做偏移，是相对于自身的中心点而言，如果用百分比做单位，参考值就是本身元素的宽度</p>
+<p>如图：<img src="https://i.imgur.com/qZYoGNA.jpg" alt="绝对定位"></p>
+<p><img src="https://i.imgur.com/aSfuNbO.jpg" alt="transform"></p>
+<p>效果：<img src="https://i.imgur.com/wVI7QNr.jpg" alt></p>
+<h3 id="块级元素水平垂直方法二：综合水平居中和垂直居中"><a href="#块级元素水平垂直方法二：综合水平居中和垂直居中" class="headerlink" title="块级元素水平垂直方法二：综合水平居中和垂直居中"></a>块级元素水平垂直方法二：综合水平居中和垂直居中</h3><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;综合水平居中和垂直居中&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        .parent{
+            width: 400px;
+            height: 400px;
+            border:1px solid #ccc;
+            text-align: center;
+            display:table-cell;
+            vertical-align: middle;
+        }
+        .child{
+            width: 200px;
+            height: 200px;
+            border:1px solid #ccc;
+            display: inline-block;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;parent&quot;&gt;
+        &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>效果：<img src="https://i.imgur.com/LBJLzIh.jpg" alt></p>
+<p><strong>一个相关的例子，解决图片底部3px的问题。</strong></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;综合水平居中和垂直居中&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        .parent{
+            width: 400px;
+            height: 400px;
+            /*border:1px solid #ccc;*/
+            background-color: red;
+            text-align: center;
+            display:table-cell;
+            vertical-align: middle;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;parent&quot;&gt;
+        &lt;img src=&quot;./img/1.jpg&quot;&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>问题：父框会多出3px的高度</p>
+<p><img src="https://i.imgur.com/rIHuS74.jpg" alt="多出3px"></p>
+<p>解决：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;综合水平居中和垂直居中&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        .parent{
+            width: 400px;
+            height: 400px;
+            /*border:1px solid #ccc;*/
+            background-color: red;
+            text-align: center;
+            display:table-cell;
+            vertical-align: middle;
+            /*解决方法一：*/
+            /*font-size: 0px;*/
+
+            /*解决方法二：*/
+            /*line-height:0px;*/
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            /*解决方法二：给img设置display:block;使vertical-align:middle失效，因为它对块级元素不生效*/
+            display: block;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;parent&quot;&gt;
+        &lt;img src=&quot;./img/1.jpg&quot;&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>效果：<img src="https://i.imgur.com/WyJQxvy.jpg" alt="解决了3px"></p>
+<h3 id="块级元素水平垂直方法三：flex方法"><a href="#块级元素水平垂直方法三：flex方法" class="headerlink" title="块级元素水平垂直方法三：flex方法"></a>块级元素水平垂直方法三：flex方法</h3><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;4-flex方法&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        .parent{
+            height: 400px;
+            width: 400px;
+            border:1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+        }
+        .child{
+            height: 200px;
+            width: 200px;
+            border:1px solid #ccc;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;parent&quot;&gt;
+        &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>效果：<img src="https://i.imgur.com/DJEAgOS.jpg" alt></p>
 	
 	</div>
 	
@@ -339,10 +525,10 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-		
-			<a href="/2019/03/15/hello-world/" title="Hello World" rel="next">
-				下一篇&raquo;
+			<a href="/2019/03/18/Web API/" title="WEB API" rel="prev">
+				&laquo;上一篇
 			</a>
+		
 			
 	</span>
       		
@@ -358,16 +544,24 @@
 		
 				<li>
 					<div>
-						<a href="/2019/03/15/hello-world/" title="Hello World">
-							Hello World
+						<a href="/2019/03/18/Web API/" title="WEB API">
+							WEB API
 						</a>
 						<p>
-							Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using ...
+							DOM树核心DOM和HTML DOM
+核心DOM：操作一切结构化文档的统一API
+特点：繁琐！万能！
+
+HTML DOM:专门操作HTML文档的简化版DOM API
+特点：简洁，不是万能！
+
+节点对象：Node
+三大属性：nodeTy...
 						</p>
 					</div>
 
-					<a href="/2019/03/15/hello-world/" title="Hello World">				
-						<img src="/img/cart_cover.jpg" class="relateImg" alt="Hello World">
+					<a href="/2019/03/18/Web API/" title="WEB API">				
+						<img src="/img/cart_cover.jpg" class="relateImg" alt="WEB API">
 					</a>
 				</li>											
 		
@@ -462,6 +656,13 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
+
+		
+
+		<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
 	
 		</main>
 		
