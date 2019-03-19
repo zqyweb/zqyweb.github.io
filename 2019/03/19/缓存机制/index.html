@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      WEB API | Hexo
+       | Hexo
     
   </title>
   <meta name="author" content="John Doe">
@@ -111,7 +111,7 @@
 				<!-- Page title -->
 				<p>
 					
-						当前文章&nbsp;:&nbsp;《WEB API》
+						当前文章&nbsp;:&nbsp;《》
 					
 				</p>
 				<!-- Progress bar -->
@@ -270,27 +270,23 @@
 	
 	<div class="article-title">
 		
-	<a href="/2019/03/18/Web API/" itemprop="url">
-		WEB API
-	</a>
-
 	</div>
 
 	<div class="article-meta">
 		<span>
 			
 	发布于
-	<a href="/2019/03/18/Web API/" itemprop="url">
-		<time datetime="2019-03-18T01:47:42.002Z" itemprop="datePublished">
-	  		2019-03-18
+	<a href="/2019/03/19/缓存机制/" itemprop="url">
+		<time datetime="2019-03-19T09:25:56.581Z" itemprop="datePublished">
+	  		2019-03-19
 	  </time>
 	</a> 
 
 	/
 	更新于
-	<a href="/2019/03/18/Web API/" itemprop="url">
-		<time datetime="2019-03-18T01:47:42.002Z" itemprop="dateUpdated">
-	  		2019-03-18
+	<a href="/2019/03/19/缓存机制/" itemprop="url">
+		<time datetime="2019-03-19T09:25:56.581Z" itemprop="dateUpdated">
+	  		2019-03-19
 	  </time>
 	</a> 	
 
@@ -303,7 +299,7 @@
 		/
 		
 
-    <span class="leancloud_visitors" id="/2019/03/18/Web API/_visitors" data-url="/2019/03/18/Web API/" data-title="WEB API">
+    <span class="leancloud_visitors" id="/2019/03/19/缓存机制/_visitors" data-url="/2019/03/19/缓存机制/" data-title>
         热度
         <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
     </span>
@@ -312,7 +308,7 @@
 
 
 
-    <span class="leancloud_likes" id="/2019/03/18/Web API/_likes" data-url="/2019/03/18/Web API/" data-title="WEB API" rel="unlike">
+    <span class="leancloud_likes" id="/2019/03/19/缓存机制/_likes" data-url="/2019/03/19/缓存机制/" data-title rel="unlike">
         喜欢
         <i class="fa fa-heart"></i>
         <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
@@ -321,215 +317,47 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h2 id="DOM树"><a href="#DOM树" class="headerlink" title="DOM树"></a>DOM树</h2><pre><code>核心DOM和HTML DOM
-核心DOM：操作一切结构化文档的统一API
-特点：繁琐！万能！
-
-HTML DOM:专门操作HTML文档的简化版DOM API
-特点：简洁，不是万能！
-
-节点对象：Node
-三大属性：nodeType、nodeName、nodeValue
-</code></pre><h3 id="DOM-查找"><a href="#DOM-查找" class="headerlink" title="DOM:查找"></a>DOM:查找</h3><pre><code>方式一：不要查找直接获得元素
-html document.documentElement
-head document.head
-body document.body
-
-方式二：按节点间关系查找
-1.父子关系
-elem.parentNode    获得elem的父节点
-elem.childNodes 获得elem的所有**直接**子节点
-elem.firstChild 获得elem下的第一个子节点
-elem.lastChild  获得elem下的最后一个子节点
-2.兄弟节点
-elem.previousSibling 获得elem的前一个兄弟节点
-elem.nextSibling 获得elem的后一个兄弟节点
-</code></pre><p><strong>存在的问题：</strong></p>
-<ul>
-<li>一切文本都是节点对象，包括看不见的空字符（tab,空格，换行）</li>
-</ul>
-<p><strong>解决：元素树</strong></p>
-<pre><code>方式三：元素树
-1.父子关系
-elem.parentElement 获得elem的父元素
-elem.children 获得elem的所有**直接**子元素
-elem.firstElementChild 获取elem下的第一个子元素
-elem.lastElementChild 获得elem下的最后一个子元素
-2.兄弟关系
-elem.previousElementSibling 获得elem的前一个兄弟元素
-elem.nextElementSibling 获得elem的后一个兄弟元素
-
-元素树不是一颗新树，只是节点树的一个子集
-</code></pre><p><strong>存在问题：</strong></p>
-<ul>
-<li>只适合IE9+的浏览器</li>
-<li>children和childNodes只能查找直接子节点，无法查找更深层次</li>
-</ul>
-<p><strong>解决：</strong></p>
-<pre><code>1.递归遍历
-缺点：反复访问集合，导致反复查找DOM树，效率低
-解决2：节点迭代器
-
-方法四：按HTML查找
-1.按id查找
-var elem = document.getElementById(&quot;ID名&quot;);
-2.按标签名查找
-var elems = parent.getElementsByTagName(&quot;标签名&quot;);
-可查找所有后代元素
-3.按name属性查找
-var elems = document.getElementsByName(&quot;name&quot;);
-4.按class属性查找
-var elems = parent.getElementsByClassName(&quot;class&quot;);
-适用于：一个元素被多个class修饰。在所有后代中查找
-</code></pre><p><strong>问题：</strong>每次只能按一种条件查找，当查找条件复杂时，步骤就非常繁琐。</p>
-<p><strong>解决：</strong>用选择器查找</p>
-<pre><code>1.仅查找一个元素
-var elem = parent.querySelector(&quot;选择器&quot;);
-2.查找多个元素
-var elems = parent.querySelectorAll(&quot;选择器&quot;);
-返回非动态集合。但是存在浏览器兼容性的问题。
-非动态集合：实际存储完整数据，即使反复访问集合，也不会反复查找DOM树
-</code></pre><h3 id="DOM-修改"><a href="#DOM-修改" class="headerlink" title="DOM:修改"></a>DOM:修改</h3><p>修改分为修改内容，属性，样式三种。</p>
-<pre><code>1.内容
-- 获取或修改元素的HTML代码片段内容
-elem.innerHTML
--2.获取或修改元素的纯文文本内容
-elem.textContent(与innerHTML相比，去掉了内嵌标签，将转义字符翻译为原文)
--获取或修改表单元素的值
-elem.value 
-
-2.属性
-- 核心DOM:
-属性节点都保存在elem的attributes集合中
-var node = elem.attributes[&quot;属性名&quot;];
-var value = node.nodeValue;
-获取：var value = elem.getAttribute(&quot;属性名&quot;);
-修改：elem.setAttribute(&quot;属性名&quot;,&quot;值&quot;);
-移除：elem.removeAttribute(&quot;属性名&quot;);
-判断有没有：var bool = elem.hasAttribute(&quot;属性名&quot;);  
-可以直接使用：class
-
-- HTML DOM:
-获取：elem.属性名
-修改：elem.属性名=值
-移除：elem.属性名 = &quot;&quot;
-判断有没有：elem.属性名！==&quot;&quot;
-.className ===》 就是HTML中的class
-
-状态属性：disabled selected checked    
-特点：值是bool类型
-不能用核心DOM类型，只能用HTML DOM类型
-
-- 自定义扩展属性：
-定义：data-属性名=&quot;值&quot;
-获取：核心DOM        HTML5:elem.dataset.属性名
-只要标识多个元素，且不希望人为或是被程序修改
-只要给元素添加行为时，查找元素都用自定义扩展属性
-
-- 样式
-
-1.内联样式
-特点：优先级最高，当前元素独有
-- 修改一个内联样式
-elem.style.css属性 = 值
-所有css属性要去横线变驼峰
--批量替换内联样式
-elem.style.cssText =&quot;&quot;;
-
-2.获得计算后的样式(最终应用到当前元素上的所有样式的合集，一个元素的完整样式，可能来源多个地方)
-//获得计算后的style对象
-var style = getComputedStyle(elem);
-//获得style中的css属性值
-var value = style.css属性
-3.修改样式中的样式：
-//获得样式表对象
-var sheet = document.styleSheets[i];
-//获得样式表对象中的一套规则：
-var rule = sheet.cssRules[i];
-//修改样式
-var style = rule.style;
-style.css属性 = 值
-</code></pre><h3 id="DOM-添加和删除"><a href="#DOM-添加和删除" class="headerlink" title="DOM:添加和删除"></a>DOM:添加和删除</h3><pre><code>//1.创建空元素
-var a = document.creatElement(&quot;a&quot;);
-//设置关键属性
-a.href = &quot;http://baidu.com&quot;;
-a.innerHTML=&quot;go to baidu&quot;;
-//3.将新元素添加到DOM树
-末尾追加：parent.appendChild(a);
-中间插入：parent.insertBefore(a,child);
-替换：parent.replace(a,child);
-</code></pre><p><strong>总结</strong>：尽量减少操作DOM树的次数<br>    每次操作DOM树都会导致重新layout</p>
-<pre><code>![layout](https://i.imgur.com/htVxk7k.jpg)
-
-只要修改DOM树(修改样式，修改位置，添加删除元素等)都会导致重新layout---效率低
-
-解决：如果同时添加父元素和子元素，都要先在内存中将子元素，添加到父元素中，最后再将父元素，一次性添加到DOM树。
-或是父元素已经在DOM树上了，要同时添加多个平级子元素时：
-文档片段：内存中，临时存储一课DOM子树段的存储空间
-//创建文档片段对象
-var frag = document.creatDocumentFragment();
-//先将子元素添加到DOM树指定父元素下
-frag.appendChild(child);
-//将文档片段一次性添加到DOM树指定父元素下
-parent.appendChild(frag);
-frag将子元素送到DOM树后，自动释放。
-</code></pre><p> <strong>HTML DOM常用对象: </strong></p>
-<pre><code> 什么是: 对常用的元素，提供了简化版的API
- 优: 简化
- 缺: 不是万能
- Image: 创建:  var img=new Image();
- Select: 
-  属性: .selectedIndex 快速获得当前选中项的下标位置
-       .value 当选中项有value属性时，会返回option的value
-             如果选中项没有value属性，则用内容代替
-       .options: 获得select下所有option元素对象的集合
-         options.length 获得选项的个数
-       .length =&gt; .options.length
-         固定套路: 清空所有option
-           sel.innerHTML=&quot;&quot;;
-           sel.length=0; =&gt;sel.options.length=0;
-  方法: add(option) 代替 appendChild(option)
-        问题: 不支持frag
-       remove(i) 移除i位置的option
- Option:
-  创建: var opt=new Option(text,value);
-  属性: .index   .text    .value
-
- table:管着行分组: 
-  创建: var thead=table.createTHead()
-       var tbody=table.createTBody();
-       var tfoot=table.createTFoot();
-  删除: table.deleteTHead()
-       table.deleteTFoot()
-  获取: tabel.tHead   table.tFoot   table.tBodies[i]
-行分组:管着行: 
-  创建: var tr=行分组.insertRow(i)
-    固定套路: 1. 在结尾追加一行: 行分组.insertRow()
-             2. 在开头插入一行: 行分组.insertRow(0)
-  删除: 行分组.deleteRow(i)
-    强调: 主语是行分组时，i要求是在行分组内的相对下标位置
-  获取: 行分组.rows  获得行分组内所有行的集合
-行:管着格:
-  创建: var td=tr.insertCell(i)
-    固定套路: 末尾追加: tr.insertCell()
-  删除: tr.deleteCell(i)
-  获取: tr.cells
-
- form: 
-  获取: var form=document.forms[i/id/name];
-  属性: form.elements 获得表单中所有表单元素的值
-      强调: 表单元素包括: input  select  textarea  button
-       form.elements.length 获得表单中表单元素的个数
-       form.length==&gt; form.elements.length
-        固定套路: 获得结尾的按钮: 
-                var btn=form.elements[form.length-n]
-  方法: form.submit() //在程序中手动提交表单
- 表单元素: 
-  获取: var 表单元素= form.elements[i/id/name]
-    如果表单元素有name属性，则: form.name属性值
-  方法: elem.focus() 让当前表单获得焦点  
-       elem.blur()
-</code></pre>	
+		<p>#</p>
+<pre><code>HTTP报文就是浏览器和服务器间通信时发送及响应的数据块。
+浏览器向服务器请求数据，发送请求(request)报文；服务器向浏览器返回数据，返回响应(response)报文。
+报文信息主要分为两部分
+1.包含属性的首部(header)--------------------------附加信息（cookie，缓存信息等）与缓存相关的规则信息，均包含在header中
+2.包含数据的主体部分(body)-----------------------HTTP请求真正想要传输的部分
+</code></pre><p>#缓存规则解析</p>
+<pre><code>为方便大家理解，我们认为浏览器存在一个缓存数据库,用于存储缓存信息。
+在客户端第一次请求数据时，此时缓存数据库中没有对应的缓存数据，需要请求服务器，服务器返回后，将数据存储至缓存数据库中。
+</code></pre><p><img src="https://i.imgur.com/Ov0HsOI.jpg" alt="第一次请求"></p>
+<p>HTTP缓存有多种规则，根据是否需要重新向服务器发起请求来分类，我将其分为两大类(强制缓存，对比缓存)<br>在详细介绍这两种规则之前，先通过时序图的方式，让大家对这两种规则有个简单了解。</p>
+<p>已存在缓存数据时，仅基于强制缓存，请求数据的流程如下</p>
+<p><img src="https://i.imgur.com/hEV0zXe.jpg" alt="强缓存"></p>
+<p>对缓存机制不太了解的同学可能会问，基于对比缓存的流程下，不管是否使用缓存，都需要向服务器发送请求，那么还用缓存干什么？<br>这个问题，我们暂且放下，后文在详细介绍每种缓存规则的时候，会带给大家答案。</p>
+<p>我们可以看到两类缓存规则的不同，强制缓存如果生效，不需要再和服务器发生交互，而对比缓存不管是否生效，都需要与服务端发生交互。<br>两类缓存规则可以同时存在，强制缓存优先级高于对比缓存，也就是说，当执行强制缓存的规则时，如果缓存生效，直接使用缓存，不再执行对比缓存规则。</p>
+<p>#强制缓存</p>
+<p>从上文我们得知，强制缓存，在缓存数据未失效的情况下，可以直接使用缓存数据，那么浏览器是如何判断缓存数据是否失效呢？<br>我们知道，在没有缓存数据的时候，浏览器向服务器请求数据时，服务器会将数据和缓存规则一并返回，缓存规则信息包含在响应header中。</p>
+<p>对于强制缓存来说，响应header中会有两个字段来标明失效规则（Expires/Cache-Control）<br>使用chrome的开发者工具，可以很明显的看到对于强制缓存生效时，网络请求的情况</p>
+<p><img src="https://i.imgur.com/IYNwYpF.jpg" alt="例子"></p>
+<p>Expires<br>　　Expires的值为服务端返回的到期时间，即下一次请求时，请求时间小于服务端返回的到期时间，直接使用缓存数据。<br>不过Expires 是HTTP 1.0的东西，现在默认浏览器均默认使用HTTP 1.1，所以它的作用基本忽略。<br>另一个问题是，到期时间是由服务端生成的，但是客户端时间可能跟服务端时间有误差，这就会导致缓存命中的误差。<br>所以HTTP 1.1 的版本，使用Cache-Control替代。</p>
+<p>Cache-Control<br>Cache-Control 是最重要的规则。常见的取值有private、public、no-cache、max-age，no-store，默认为private。<br>private:             客户端可以缓存<br>public:              客户端和代理服务器都可缓存（前端的同学，可以认为public和private是一样的）<br>max-age=xxx:   缓存的内容将在 xxx 秒后失效<br>no-cache:          需要使用对比缓存来验证缓存数据（后面介绍）<br>no-store:           所有内容都不会缓存，强制缓存，对比缓存都不会触发（对于前端开发来说，缓存越多越好，so…基本上和它说886）</p>
+<p>举个板栗</p>
+<p><img src="https://i.imgur.com/QcFSkFh.jpg" alt></p>
+<p>图中Cache-Control仅指定了max-age，所以默认为private，缓存时间为31536000秒（365天）<br>也就是说，在365天内再次请求这条数据，都会直接获取缓存数据库中的数据，直接使用。</p>
+<p>#对比缓存</p>
+<p>对比缓存，顾名思义，需要进行比较判断是否可以使用缓存。<br>浏览器第一次请求数据时，服务器会将缓存标识与数据一起返回给客户端，客户端将二者备份至缓存数据库中。<br>再次请求数据时，客户端将备份的缓存标识发送给服务器，服务器根据缓存标识进行判断，判断成功后，返回304状态码，通知客户端比较成功，可以使用缓存数据。</p>
+<p><img src="https://i.imgur.com/AHaOmKc.jpg" alt="对比缓存例子"></p>
+<p>通过两图的对比，我们可以很清楚的发现，在对比缓存生效时，状态码为304，并且报文大小和请求时间大大减少。<br>原因是，服务端在进行标识比较后，只返回header部分，通过状态码通知客户端使用缓存，不再需要将报文主体部分返回给客户端。</p>
+<p>对于对比缓存来说，缓存标识的传递是我们着重需要理解的，它在请求header和响应header间进行传递，<br>一共分为两种标识传递，接下来，我们分开介绍。</p>
+<p>Last-Modified  /  If-Modified-Since<br>Last-Modified：<br>服务器在响应请求时，告诉浏览器资源的最后修改时间。</p>
+<p><img src="https://i.imgur.com/vAkWTGm.jpg" alt></p>
+<p>If-Modified-Since：<br>再次请求服务器时，通过此字段通知服务器上次请求时，服务器返回的资源最后修改时间。<br>服务器收到请求后发现有头If-Modified-Since 则与被请求资源的最后修改时间进行比对。<br>若资源的最后修改时间大于If-Modified-Since，说明资源又被改动过，则响应整片资源内容，返回状态码200；<br>若资源的最后修改时间小于或等于If-Modified-Since，说明资源无新修改，则响应HTTP 304，告知浏览器继续使用所保存的cache。</p>
+<p><img src="https://i.imgur.com/PAWlu7E.jpg" alt></p>
+<p>Etag  /  If-None-Match（优先级高于Last-Modified  /  If-Modified-Since）<br>Etag：<br>服务器响应请求时，告诉浏览器当前资源在服务器的唯一标识（生成规则由服务器决定）。</p>
+<p><img src="https://i.imgur.com/5b1Gu7g.jpg" alt></p>
+<p>If-None-Match：<br>再次请求服务器时，通过此字段通知服务器客户段缓存数据的唯一标识。<br>服务器收到请求后发现有头If-None-Match 则与被请求资源的唯一标识进行比对，<br>不同，说明资源又被改动过，则响应整片资源内容，返回状态码200；<br>相同，说明资源无新修改，则响应HTTP 304，告知浏览器继续使用所保存的cache。</p>
+<p><img src="https://i.imgur.com/nlPYhkl.jpg" alt></p>
+<p>总结<br>对于强制缓存，服务器通知浏览器一个缓存时间，在缓存时间内，下次请求，直接用缓存，不在时间内，执行比较缓存策略。<br>对于比较缓存，将缓存信息中的Etag和Last-Modified通过请求发送给服务器，由服务器校验，返回304状态码时，浏览器直接使用缓存。</p>
+<p><img src="https://i.imgur.com/d4g5D0V.jpg" alt></p>
+<p><img src="https://i.imgur.com/eY0P01H.jpg" alt></p>
+	
 	</div>
 	
 	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
@@ -547,7 +375,7 @@ frag将子元素送到DOM树后，自动释放。
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
 		
-			<a href="/2019/03/15/水平垂直居中/" title="水平垂直居中" rel="next">
+			<a href="/2019/03/19/三次握手和四次挥手过程/" title rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -562,26 +390,6 @@ frag将子元素送到DOM树后，自动释放。
 
 <div class="relate-post">
 	<ul>
-		
-				<li>
-					<div>
-						<a href="/2019/03/15/水平垂直居中/" title="水平垂直居中">
-							水平垂直居中
-						</a>
-						<p>
-							文字水平垂直居中一行文字的水平垂直居中对齐方式&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;&gt;
-   ...
-						</p>
-					</div>
-
-					<a href="/2019/03/15/水平垂直居中/" title="水平垂直居中">				
-						<img src="/img/cart_cover.jpg" class="relateImg" alt="水平垂直居中">
-					</a>
-				</li>											
-		
 		
 	</ul>
 </div>	
@@ -673,13 +481,6 @@ frag将子元素送到DOM树后，自动释放。
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
-
-		
-
-		<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
-		<script src="/plugin/toc/katelog.min.js"></script>
-
-		
 	
 		</main>
 		
