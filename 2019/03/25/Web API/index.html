@@ -1,0 +1,821 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+
+	<!DOCTYPE html>
+	<html class="scrollbar">
+		
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      WEB API | Hexo
+    
+  </title>
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content>
+  <meta name="description" content>
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+    <!-- jquery -->
+	<script src="/js/jquery-2.1.1.min.js"></script>
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="transition">
+					<div class="three-bounce1"></div>
+					<div class="three-bounce2"></div>
+					<div class="three-bounce3"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<div class="h-header">
+			<div id="logo-S">
+				
+					<a href="/">
+						<img src="/img/logo.png" alt="Logo">
+					</a>
+				
+			</div>
+			<!-- Navigation in header(id="navigation-S") -->
+			<div id="navigation-S">
+				<ul>
+					
+						<li class="menu-home">
+							<a href="/" class="menu-item-home">主页</a>
+						</li>
+					
+						<li class="menu-archive">
+							<a href="/archives" class="menu-item-archive">归档</a>
+						</li>
+					
+						<li class="menu-categories">
+							<a href="/categories" class="menu-item-categories">分类</a>
+						</li>
+					
+						<li class="menu-tags">
+							<a href="/tags" class="menu-item-tags">标签</a>
+						</li>
+					
+						<li class="menu-about">
+							<a href="/about" class="menu-item-about">关于</a>
+						</li>
+					
+						<li class="menu-gallery">
+							<a href="/gallery" class="menu-item-gallery">相册</a>
+						</li>
+					
+
+					
+				</ul>			
+			</div>				
+		</div>
+
+		<div class="h-body">	
+			<!-- motto -->
+			
+				<div id="page-motto">
+					<p class="motto">
+						
+					</p>
+				</div>
+			
+
+			<div id="navigation-H">
+				<!-- Page title -->
+				<p>
+					
+						当前文章&nbsp;:&nbsp;《WEB API》
+					
+				</p>
+				<!-- Progress bar -->
+				<div id="progress-bar"></div>
+
+				<!-- Progress percent -->
+				<div id="progress-percentage">
+					<h1>0.0%</h1>
+				</div>
+			</div>
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<ul>
+				<li>
+					<a><i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>切换背景</a>
+				</li>
+				<li>
+					<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down"></i>继续阅读</a>
+				</li>
+				<li>
+					<a href="https://github.com/Sariay/hexo-theme-Annie" target="_blank"><i class="fa fa-download"></i>克隆主题</a>
+				</li>
+			</ul>
+		</div>
+		
+		<!-- This is only a demo, please go to "https://time.is" to set your city time! -->
+<style type="text/css">
+	.header-date {
+		position: absolute;
+		left: 40px;
+		bottom: 30px;
+		writing-mode: tb-rl;
+		font-size: 36px;
+	}	
+	.header-date a {
+		border-bottom: none;
+	}
+	@media only screen and (max-width: 768 ) {
+		.header-date {
+			position: absolute;
+			left: 40px;
+			bottom: 30px;
+			writing-mode: tb-rl;
+			font-size: 20px;
+		}			
+	}
+</style>
+<div class="header-date">
+	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+	<span id="Beijing_z43d"></span>
+</div>
+<script src="//widget.time.is/zh.js"></script>
+<script>
+	time_is_widget.init({
+		Beijing_z43d:{
+			template:"DATE", 
+			date_format:"year年 monthname dnum日"
+		}
+	});
+</script>
+</div></header>
+
+<!-- Navigation in div(id="navigation-H") -->
+<a class="nav-trigger">
+	<span></span>
+</a>
+
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+			
+				<li class="menu-home">
+					<a href="/" class="menu-item-home">主页</a>
+				</li>
+			
+				<li class="menu-archive">
+					<a href="/archives" class="menu-item-archive">归档</a>
+				</li>
+			
+				<li class="menu-categories">
+					<a href="/categories" class="menu-item-categories">分类</a>
+				</li>
+			
+				<li class="menu-tags">
+					<a href="/tags" class="menu-item-tags">标签</a>
+				</li>
+			
+				<li class="menu-about">
+					<a href="/about" class="menu-item-about">关于</a>
+				</li>
+			
+				<li class="menu-gallery">
+					<a href="/gallery" class="menu-item-gallery">相册</a>
+				</li>
+			
+
+			
+		</ul>
+	</div>
+
+	<div class="nav-footer">
+		<ul>
+	
+		
+			<li>
+				<a href="http://github.com/" title="Github" target="_blank">
+					<i class="fa fa-github"></i>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="http://github.com/" title="Weibo" target="_blank">
+					<i class="fa fa-weibo"></i>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="mailto:http://github.com/" title="Email" target="_blank">
+					<i class="fa fa-envelope-o"></i>
+				</a>
+			</li>
+		
+
+		
+			<li>
+				<a href="http://github.com/" title="QQ" target="_blank">
+					<i class="fa fa-qq"></i>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="http://github.com/" title="Twitter" target="_blank">
+					<i class="fa fa-twitter"></i>
+				</a>
+			</li>
+		
+	 
+</ul>
+	</div>
+</nav>
+
+		
+		<!--main-->
+		<main>
+			<div class="layout-post">
+	
+	
+	<div class="article-title">
+		
+	<a href="/2019/03/25/Web API/" itemprop="url">
+		WEB API
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			
+	发布于
+	<a href="/2019/03/25/Web API/" itemprop="url">
+		<time datetime="2019-03-25T13:57:40.428Z" itemprop="datePublished">
+	  		2019-03-25
+	  </time>
+	</a> 
+
+	/
+	更新于
+	<a href="/2019/03/25/Web API/" itemprop="url">
+		<time datetime="2019-03-25T13:57:40.428Z" itemprop="dateUpdated">
+	  		2019-03-18
+	  </time>
+	</a> 	
+
+		</span>
+		/
+		<span>
+			<i class="fa fa-tags"></i>
+					
+		</span>
+		/
+		
+
+    <span class="leancloud_visitors" id="/2019/03/25/Web API/_visitors" data-url="/2019/03/25/Web API/" data-title="WEB API">
+        热度
+        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
+    </span>
+    
+    /
+
+
+
+    <span class="leancloud_likes" id="/2019/03/25/Web API/_likes" data-url="/2019/03/25/Web API/" data-title="WEB API" rel="unlike">
+        喜欢
+        <i class="fa fa-heart"></i>
+        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
+    </span>
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<h2 id="DOM树"><a href="#DOM树" class="headerlink" title="DOM树"></a>DOM树</h2><pre><code>核心DOM和HTML DOM
+核心DOM：操作一切结构化文档的统一API
+特点：繁琐！万能！
+
+HTML DOM:专门操作HTML文档的简化版DOM API
+特点：简洁，不是万能！
+
+节点对象：Node
+三大属性：nodeType、nodeName、nodeValue
+</code></pre><h3 id="DOM-查找"><a href="#DOM-查找" class="headerlink" title="DOM:查找"></a>DOM:查找</h3><pre><code>方式一：不要查找直接获得元素
+html document.documentElement
+head document.head
+body document.body
+
+方式二：按节点间关系查找
+1.父子关系
+elem.parentNode    获得elem的父节点
+elem.childNodes 获得elem的所有**直接**子节点
+elem.firstChild 获得elem下的第一个子节点
+elem.lastChild  获得elem下的最后一个子节点
+2.兄弟节点
+elem.previousSibling 获得elem的前一个兄弟节点
+elem.nextSibling 获得elem的后一个兄弟节点
+</code></pre><p><strong>存在的问题：</strong></p>
+<ul>
+<li>一切文本都是节点对象，包括看不见的空字符（tab,空格，换行）</li>
+</ul>
+<p><strong>解决：元素树</strong></p>
+<pre><code>方式三：元素树
+1.父子关系
+elem.parentElement 获得elem的父元素
+elem.children 获得elem的所有**直接**子元素
+elem.firstElementChild 获取elem下的第一个子元素
+elem.lastElementChild 获得elem下的最后一个子元素
+2.兄弟关系
+elem.previousElementSibling 获得elem的前一个兄弟元素
+elem.nextElementSibling 获得elem的后一个兄弟元素
+
+元素树不是一颗新树，只是节点树的一个子集
+</code></pre><p><strong>存在问题：</strong></p>
+<ul>
+<li>只适合IE9+的浏览器</li>
+<li>children和childNodes只能查找直接子节点，无法查找更深层次</li>
+</ul>
+<p><strong>解决：</strong></p>
+<pre><code>1.递归遍历
+缺点：反复访问集合，导致反复查找DOM树，效率低
+解决2：节点迭代器
+
+方法四：按HTML查找
+1.按id查找
+var elem = document.getElementById(&quot;ID名&quot;);
+2.按标签名查找
+var elems = parent.getElementsByTagName(&quot;标签名&quot;);
+可查找所有后代元素
+3.按name属性查找
+var elems = document.getElementsByName(&quot;name&quot;);
+4.按class属性查找
+var elems = parent.getElementsByClassName(&quot;class&quot;);
+适用于：一个元素被多个class修饰。在所有后代中查找
+</code></pre><p><strong>问题：</strong>每次只能按一种条件查找，当查找条件复杂时，步骤就非常繁琐。</p>
+<p><strong>解决：</strong>用选择器查找</p>
+<pre><code>1.仅查找一个元素
+var elem = parent.querySelector(&quot;选择器&quot;);
+2.查找多个元素
+var elems = parent.querySelectorAll(&quot;选择器&quot;);
+返回非动态集合。但是存在浏览器兼容性的问题。
+非动态集合：实际存储完整数据，即使反复访问集合，也不会反复查找DOM树
+</code></pre><h3 id="DOM-修改"><a href="#DOM-修改" class="headerlink" title="DOM:修改"></a>DOM:修改</h3><p>修改分为修改内容，属性，样式三种。</p>
+<pre><code>1.内容
+- 获取或修改元素的HTML代码片段内容
+elem.innerHTML
+-2.获取或修改元素的纯文文本内容
+elem.textContent(与innerHTML相比，去掉了内嵌标签，将转义字符翻译为原文)
+-获取或修改表单元素的值
+elem.value 
+
+2.属性
+- 核心DOM:
+属性节点都保存在elem的attributes集合中
+var node = elem.attributes[&quot;属性名&quot;];
+var value = node.nodeValue;
+获取：var value = elem.getAttribute(&quot;属性名&quot;);
+修改：elem.setAttribute(&quot;属性名&quot;,&quot;值&quot;);
+移除：elem.removeAttribute(&quot;属性名&quot;);
+判断有没有：var bool = elem.hasAttribute(&quot;属性名&quot;);  
+可以直接使用：class
+
+- HTML DOM:
+获取：elem.属性名
+修改：elem.属性名=值
+移除：elem.属性名 = &quot;&quot;
+判断有没有：elem.属性名！==&quot;&quot;
+.className ===》 就是HTML中的class
+
+状态属性：disabled selected checked    
+特点：值是bool类型
+不能用核心DOM类型，只能用HTML DOM类型
+
+- 自定义扩展属性：
+定义：data-属性名=&quot;值&quot;
+获取：核心DOM        HTML5:elem.dataset.属性名
+只要标识多个元素，且不希望人为或是被程序修改
+只要给元素添加行为时，查找元素都用自定义扩展属性
+
+- 样式
+
+1.内联样式
+特点：优先级最高，当前元素独有
+- 修改一个内联样式
+elem.style.css属性 = 值
+所有css属性要去横线变驼峰
+-批量替换内联样式
+elem.style.cssText =&quot;&quot;;
+
+2.获得计算后的样式(最终应用到当前元素上的所有样式的合集，一个元素的完整样式，可能来源多个地方)
+//获得计算后的style对象
+var style = getComputedStyle(elem);
+//获得style中的css属性值
+var value = style.css属性
+3.修改样式中的样式：
+//获得样式表对象
+var sheet = document.styleSheets[i];
+//获得样式表对象中的一套规则：
+var rule = sheet.cssRules[i];
+//修改样式
+var style = rule.style;
+style.css属性 = 值
+</code></pre><h3 id="DOM-添加和删除"><a href="#DOM-添加和删除" class="headerlink" title="DOM:添加和删除"></a>DOM:添加和删除</h3><pre><code>//1.创建空元素
+var a = document.creatElement(&quot;a&quot;);
+//设置关键属性
+a.href = &quot;http://baidu.com&quot;;
+a.innerHTML=&quot;go to baidu&quot;;
+//3.将新元素添加到DOM树
+末尾追加：parent.appendChild(a);
+中间插入：parent.insertBefore(a,child);
+替换：parent.replace(a,child);
+</code></pre><p><strong>总结</strong>：尽量减少操作DOM树的次数<br>    每次操作DOM树都会导致重新layout</p>
+<pre><code>![layout](https://i.imgur.com/htVxk7k.jpg)
+
+只要修改DOM树(修改样式，修改位置，添加删除元素等)都会导致重新layout---效率低
+
+解决：如果同时添加父元素和子元素，都要先在内存中将子元素，添加到父元素中，最后再将父元素，一次性添加到DOM树。
+或是父元素已经在DOM树上了，要同时添加多个平级子元素时：
+文档片段：内存中，临时存储一课DOM子树段的存储空间
+//创建文档片段对象
+var frag = document.creatDocumentFragment();
+//先将子元素添加到DOM树指定父元素下
+frag.appendChild(child);
+//将文档片段一次性添加到DOM树指定父元素下
+parent.appendChild(frag);
+frag将子元素送到DOM树后，自动释放。
+</code></pre><p> <strong>HTML DOM常用对象: </strong></p>
+<pre><code> 什么是: 对常用的元素，提供了简化版的API
+ 优: 简化
+ 缺: 不是万能
+ Image: 创建:  var img=new Image();
+ Select: 
+  属性: .selectedIndex 快速获得当前选中项的下标位置
+       .value 当选中项有value属性时，会返回option的value
+             如果选中项没有value属性，则用内容代替
+       .options: 获得select下所有option元素对象的集合
+         options.length 获得选项的个数
+       .length =&gt; .options.length
+         固定套路: 清空所有option
+           sel.innerHTML=&quot;&quot;;
+           sel.length=0; =&gt;sel.options.length=0;
+  方法: add(option) 代替 appendChild(option)
+        问题: 不支持frag
+       remove(i) 移除i位置的option
+ Option:
+  创建: var opt=new Option(text,value);
+  属性: .index   .text    .value
+
+ table:管着行分组: 
+  创建: var thead=table.createTHead()
+       var tbody=table.createTBody();
+       var tfoot=table.createTFoot();
+  删除: table.deleteTHead()
+       table.deleteTFoot()
+  获取: tabel.tHead   table.tFoot   table.tBodies[i]
+行分组:管着行: 
+  创建: var tr=行分组.insertRow(i)
+    固定套路: 1. 在结尾追加一行: 行分组.insertRow()
+             2. 在开头插入一行: 行分组.insertRow(0)
+  删除: 行分组.deleteRow(i)
+    强调: 主语是行分组时，i要求是在行分组内的相对下标位置
+  获取: 行分组.rows  获得行分组内所有行的集合
+行:管着格:
+  创建: var td=tr.insertCell(i)
+    固定套路: 末尾追加: tr.insertCell()
+  删除: tr.deleteCell(i)
+  获取: tr.cells
+
+ form: 
+  获取: var form=document.forms[i/id/name];
+  属性: form.elements 获得表单中所有表单元素的值
+      强调: 表单元素包括: input  select  textarea  button
+       form.elements.length 获得表单中表单元素的个数
+       form.length==&gt; form.elements.length
+        固定套路: 获得结尾的按钮: 
+                var btn=form.elements[form.length-n]
+  方法: form.submit() //在程序中手动提交表单
+ 表单元素: 
+  获取: var 表单元素= form.elements[i/id/name]
+    如果表单元素有name属性，则: form.name属性值
+  方法: elem.focus() 让当前表单获得焦点  
+       elem.blur()
+</code></pre>	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
+
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">相关文章</div>
+				<div>评论</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+		
+			<a href="/2019/03/25/浮动与定位/" title rel="prev">
+				&laquo;上一篇
+			</a>
+		
+		
+			<a href="/2019/03/25/BFC与ifc/" title rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	<ul>
+		
+				<li>
+					<div>
+						<a href="/2019/03/25/Ajax/" title>
+							
+						</a>
+						<p>
+							@TOC
+Ajax学习1.原生Ajax// 使用Ajax发送请求需要如下几步：
+
+//1.创建XMLHttpRequest对象
+var xhr = new XMLHttpRequest;
+//2.准备发送
+xhr.open('get'...
+						</p>
+					</div>
+
+					<a href="/2019/03/25/Ajax/" title>				
+						<img src="/img/cart_cover.jpg" class="relateImg">
+					</a>
+				</li>											
+		
+		
+				<li>
+					<div>
+						<a href="/2019/03/25/水平垂直居中/" title="水平垂直居中">
+							水平垂直居中
+						</a>
+						<p>
+							文字水平垂直居中一行文字的水平垂直居中对齐方式&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+   ...
+						</p>
+					</div>
+
+					<a href="/2019/03/25/水平垂直居中/" title="水平垂直居中">				
+						<img src="/img/cart_cover.jpg" class="relateImg" alt="水平垂直居中">
+					</a>
+				</li>											
+		
+		
+	</ul>
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know 【表情】-->
+			
+		
+		
+	
+
+</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+
+	<script>
+		var appid = 'dX--',
+            appkey = 'dx--';	  
+        AnnieLeancloud(appid, appkey);         
+	</script>
+    
+
+
+ 
+
+<!-- show math formula -->
+
+
+
+
+<!-- TODO: There seems to be a bug when you close the post gallery! -->
+<link rel="stylesheet" href="/plugin/lightgallery/css/lightgallery.css">
+<script src="/plugin/lightgallery/js/jquery-1.11.0.min.js"></script>
+<script src="/plugin/lightgallery/js/lightgallery-all.min.js"></script>
+
+<script type="text/javascript">
+	var postTitle = $('.article-title a').text() ? $('.article-title a').text() : "No post title!";
+	$('.article-content img').each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		$(this).wrap('<div class="img-responsive" data-src="' + imgPath + '" data-responsive="' + imgPath + '" data-sub-html="<p>图片 ' + imgTitle + '</p><h4>文章' + postTitle + '</h4>"></div>');
+	});
+
+	$('.article-content').lightGallery({
+		mode: 'lg-slide',
+		selector: '.img-responsive',
+		share: false,
+		zoom: false,
+		download: false
+	});
+	//TODO：支持video
+</script>
+
+<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+		
+
+		<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
+	
+		</main>
+		
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		
+			<li>
+				<a href="http://github.com/" title="Github" target="_blank">
+					<i class="fa fa-github"></i>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="http://github.com/" title="Weibo" target="_blank">
+					<i class="fa fa-weibo"></i>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="mailto:http://github.com/" title="Email" target="_blank">
+					<i class="fa fa-envelope-o"></i>
+				</a>
+			</li>
+		
+
+		
+			<li>
+				<a href="http://github.com/" title="QQ" target="_blank">
+					<i class="fa fa-qq"></i>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="http://github.com/" title="Twitter" target="_blank">
+					<i class="fa fa-twitter"></i>
+				</a>
+			</li>
+		
+	 
+</ul>
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2017 - 2019, content by John Doe. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+		
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+
+		<span id="busuanzi_container_page_pv">
+	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+		</span>
+
+	
+
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay. 					
+		</p>
+	</div>		
+</footer>
+		
+    <!-- set '1' to show motto in all pages! -->
+
+	<script src="/js/motto.js"></script>
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+
+
+    <script src="/js/love.js"></script>
+
+
+<!--back to top-->
+
+    
+	<div id="totop">
+  		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a>
+	</div>
+	<div id="tobuttom">
+		<a href="javascript:;" name="TOBUTTOM" class="fa fa-arrow-down"></a>
+	</div>
+ 
+
+
+ 
+
+<script src="/js/vibrant.js"></script>
+<script src="/js/chinese.js"></script>
+<script src="/js/main.js"></script>
+	</body>
+	</html>
