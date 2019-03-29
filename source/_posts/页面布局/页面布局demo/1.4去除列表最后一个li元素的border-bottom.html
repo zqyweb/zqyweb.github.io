@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>1.4去除列表最后一个li元素的border-bottom</title>
+    <style>
+      *{
+        margin:0;
+        padding:0;
+      }
+      .div{
+        width:200px;
+        border:5px solid red;
+        margin:20px 0 0 20px;
+      }
+      .div ul li{
+        list-style-type:none;
+        height:26px;
+        line-height:26px;
+        border-bottom:1px dashed lightblue;
+      }
+      /*方式一：
+      .div ul li.lastLi{
+        margin-bottom:-1px;
+      }*/
+      .div ul{
+        overflow:hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div">
+      <ul>
+        <li>Item A</li>
+        <li>Item B</li>
+        <li>Item C</li>
+        <li>Item D</li>
+        <li class="lastLi">Item E</li>
+      </ul>
+    </div>
+
+  </body>
+</html>

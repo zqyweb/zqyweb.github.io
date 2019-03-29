@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>负边距加定位实现水平垂直居中</title>
+    <style>
+      .div1{
+        width:200px;
+        height:200px;
+        position:relative;
+        border: 1px solid red;
+      }
+      .div2{
+        width:100px;
+        height:100px;
+        background:pink;
+        position: absolute;
+        /*left/top:子盒子相对父盒子的一半，此时在右下角*/
+  			left: 50%;
+  			top:50%;
+        /*transform：相对自身元素走自己盒子的一半*/
+  			transform: translate(-50%,-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1">
+      <div class="div2">
+
+      </div>
+    </div>
+
+  </body>
+</html>
