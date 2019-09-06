@@ -7,7 +7,7 @@ title: Hexo
 subtitle:
 description:
 keywords:
-author: John Doe
+author: Zhang Quan yu
 language:
 timezone:
 
@@ -80,7 +80,7 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 #theme: landscape
-theme: hexo-theme-Annie
+theme: indigo
 
 search:
   path: search.json
