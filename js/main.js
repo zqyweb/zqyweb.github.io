@@ -1,511 +1,543 @@
-/*
- * 2018.8.26 by lcc
- * Based on some unknow sources, thanks for their open sources! Also, Relevant rights reserved by them!
- */
-jQuery(document).ready(function($) {
-
-	"use strict";
-
-	/* Some global variables */
-	var scrollLimitG = 500,
-		scrollSpeedG = 500,
-		delayTimeG = 550,
-		headerH = $('header').outerHeight(),
-		headerAId = '#navigation-S a, #logo-S a',
-		postContentH = $('#article-content').outerHeight(),
-		postPageId = '.layout-post',
-		postCoverId = '#current-post-cover',
-		postTocId = '#catelog-list',
-		paginationId = '#pagination a',
-		paginationContainer = '#layout-cart, #layout-pure, #layout-poem';
-
-	/* Preloader */
-	var Annie_Preloader = function() {
-		var mode = $('header').attr('data-img-mode'),
-			curImgSrc = ' ',
-			randomMax = $('header').attr('data-random-max'),
-			randomNum = 0;
-
-		if(mode == 'random') {
-			randomNum = Math.floor(Math.random() * (randomMax - 1) + 1);
-			curImgSrc = $('header').attr('data-random-src') + randomNum + '.jpg';
-		} else if(mode == 'normal') {
-			curImgSrc = $('header').attr('data-normal-src');
-		} else {
-			curImgSrc = 'https://source.unsplash.com/collection/954550/1920x1080';
-			//TODO: Maybe, it loads slowly!
-		}
-
-		if($(postPageId).length) {
-			curImgSrc = $(postCoverId).attr('data-scr');
-		}
-
-		function Annie_Scroll() {
-			$('html, body').delay(1000).animate({
-				scrollTop: headerH + 2
-			}, 1500);
-		}
-
-		function Annie_Transition() {
-			$('#status').fadeOut();
-			$('#preloader').delay(delayTimeG).fadeOut('slow');
-			$('body').delay(delayTimeG).css({
-				'display': 'block'
-			});
-		}
-
-		function Annie_SetBg(imgSrc) {
-			// 背景加载完成后执行
-			var backgroundImg = 'url(' + imgSrc + ')';
-			$('header').css('background-image', backgroundImg);
-
-			Annie_Transition();
-			if($(postPageId).length) {
-				Annie_Scroll()
-			}
-		}
-
-		function Annie_ColorExtraction(img) {
-			var vibrant = new Vibrant(img),
-				swatches = vibrant.swatches(),
-				mainColor = '',
-				mainRgb = [];
-			if(swatches['Vibrant']) {
-				mainColor = swatches['Vibrant'].getBodyTextColor();
-				mainRgb = swatches['Vibrant'].getRgb();
-			}
-
-			var fontColor = ' ', //mainColor
-				grayLevel = mainRgb[0] * 0.299 + mainRgb[1] * 0.587 + mainRgb[2] * 0.114;
-			if(grayLevel >= 192) {
-				// 若为浅色，把文字设置为黑色
-				fontColor = '#000';
-			} else {
-				fontColor = '#fff';
-			}
-			$(headerAId).css({
-				'color': fontColor || mainColor
-			});
-			$(headerAId).each(function() {
-				$(this).hover(
-					function() {
-						$(this).css({
-							'color': 'darkgoldenrod'
-						});
-					},
-					function() {
-						$(this).css({
-							'color': fontColor || mainColor
-						});
-					}
-
-				)
-			});
-		}
-
-		var img = new Image(),
-			stop = setTimeout(function() {
-				function timeoutCalled() {
-					console.log('timeout');
-					Annie_Transition();
-					Annie_Scroll();
-				}
-				return timeoutCalled();
-			}, 10000);
-				
-		img.crossOrigin = "Anonymous"; //TODO: CROS bug!
-		img.src = curImgSrc;
-
-		img.onerror = function() {
-			if(stop) {
-				clearTimeout(stop);
-			}
-			Annie_Transition();
-			Annie_Scroll();
-			console.log('Failed to load & set background img for header!');
-		}
-
-		img.onload = function() {
-			if(stop) {
-				clearTimeout(stop);
-			}
-
-			Annie_SetBg(img.src);
-
-			//背景主色提取可能影响页面加载速度 or 引起CROS bug！
-			//TODO: 重构header模块
-			Annie_ColorExtraction(img);
-		}
-		//The following code may have a bug when using img.src 'https://source.unsplash.com/collection/954550/1920x1080' in Fixfox...( because of cache)!
-		//		if( img.complete || img.height ){
-		//			if ( stop ) {
-		//				clearTimeout( stop );
-		//			}			
-		//			Annie_SetBg( img.src );	
-		//		} else {
-		//			img.onload = function() {
-		//				if ( stop ) {
-		//					clearTimeout( stop );
-		//				}				
-		//				Annie_SetBg( img.src );
-		//			}				
-		//		}
-		//TODO:  We can use "https://github.com/desandro/imagesloaded plugin" to check img.load status!
-	};
-
-	/* Nav */
-	var Annie_Nav = function() {
-		//open navigation
-		$('.nav-trigger').on('click', function(event) {
-			event.preventDefault();
-			toggleNav(true);
-			$('body').css('overflow', 'hidden');
-		});
-
-		//close navigation
-		$('.nav-close').on('click', function(event) {
-			event.preventDefault();
-			toggleNav(false);
-			$('body').css('overflow', 'auto');
-		});
-
-		function toggleNav(bool) {
-			$('.nav-container').toggleClass('is-visible', bool);
-		}
-
-		function navStatus() {
-			//some operation
-			var urlStr = location.href,
-				urlSta = false,
-				homePage = paginationContainer;
-
-			$('#navigation-S a').each(function() {
-				var currentUrl = $(this).attr('class');
-				currentUrl = currentUrl.substr(10);
-
-				if(urlStr.indexOf(currentUrl) > -1 && $(this).attr('href') != '') {
-					$(this).addClass('active');
-					urlSta = true;
-				} else {
-					$(this).removeClass('active');
-				}
-			});
-
-			if(!urlSta && ($(homePage).length)) {
-				$("#navigation-S a").eq(0).addClass('active');
-			}
-		}
-
-		navStatus();
-	};
-
-	/* Progress for page & post */
-	var Annie_Progress = function() {
-		$(window).scroll(function() {
-			var navBarHeight = 60,
-				navBarId = "#navigation-H";
-
-			var scrollTo = $(window).scrollTop(),
-				docHeight = $(document).height(),
-				windowHeight = $(window).height(),
-				scrollPercent = 0;
-
-			if($(postPageId).length) {
-				//TODO: There may be a bug!
-				scrollPercent = ((scrollTo - headerH) / (postContentH + 200 - windowHeight)) * 100;
-			} else {
-				scrollPercent = (scrollTo / (docHeight - windowHeight)) * 100;
-			}
-
-			scrollPercent = scrollPercent.toFixed(1);
-
-			if(scrollPercent > 100 || scrollPercent < 0) {
-				scrollPercent = 100;
-			}
-
-			$('#progress-percentage h1').text(scrollPercent + "%");
-
-			$("#progress-bar").attr("style", "width: " + (scrollPercent) + "%; display: block;");
-
-			if(scrollTo >= ((scrollLimitG > headerH) ? scrollLimitG : headerH)) {
-				$(navBarId).css({
-					top: '0'
-				}).show();
-				$('.nav-trigger').show();
-			} else {
-				$(navBarId).css({
-					top: '-' + navBarHeight + 'px'
-				}).hide();
-				$('.nav-trigger').hide();
-			}
-
-			//current post or page title
-			if(scrollTo >= headerH + 300) {
-				$('#navigation-H p').show();
-			} else {
-				$('#navigation-H p').hide();
-			}
-		}).trigger('scroll');
-	};
-
-	/* Toc */
-	var Annie_Toc = function() {
-		var scrollSpeed = scrollSpeedG,
-			upperLimit1 = headerH,
-			upperLimit2 = headerH + postContentH;
-
-		$(window).scroll(function() {
-			var scrollTop = $(document).scrollTop();
-
-			if((scrollTop >= upperLimit1) && (scrollTop < upperLimit2)) {
-				//屏幕宽度<=1024px时应隐藏
-				$(postTocId).css('position', 'fixed').show().fadeIn(delayTimeG);
-			} else {
-				$(postTocId).hide().fadeOut(delayTimeG);
-			}
-		});
-
-		if($(postTocId).length) {
-			var katelogIns = new katelog({
-				contentEl: 'article-content',
-				catelogEl: 'catelog-list',
-				linkClass: 'k-catelog-link',
-				linkActiveClass: 'k-catelog-link-active',
-				selector: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-				supplyTop: 20,
-				active: function(el) {}
-			});
-		}
-		//TODO: 添加目录标题、层级标题
-		//var tocTitle = $( postTocId ).attr('data-title'), htmlText = '<h2>' + tocTitle + '</h2>';	
-	};
-
-	/* ToTop */
-	var Annie_ToAnchor = function() {
-		var scrollSpeed = scrollSpeedG,
-			upperLimit = scrollLimitG,
-			toTop = $('#totop'),
-			readMore = $('#read-more');
-
-		toTop.hide();
-
-		$(window).scroll(function() {
-			var scrollTop = $(document).scrollTop();
-
-			if(scrollTop > upperLimit) {
-				$(toTop).stop().fadeTo(delayTimeG, 1);
-			} else {
-				$(toTop).stop().fadeTo(delayTimeG, 0);
-			}
-		});
-
-		$(toTop).click(function() {
-			$('html, body').animate({
-				scrollTop: 0
-			}, scrollSpeed);
-			return false;
-		});
-
-		$(readMore).click(function() {
-			$('html, body').animate({
-				scrollTop: $('main').offset().top + 2
-			}, scrollSpeed);
-			return false;
-		});
-	};
-
-	/* Archive by year */
-	var Annie_Archive = function() {
-		if(window.location.pathname.indexOf("archive") == -1) {
-			return;
-		}
-		var currentYear = "",
-			Newy = "";
-		$("#layout-archive-year  ul li").each(function(i) {
-			var year = $(this).find("em").attr("year");
-			if(year < currentYear || currentYear == "") {
-				currentYear = year;
-				if(Newy == "") {
-					Newy = year
-				}
-				$(this).before("<h3 class='" + currentYear + "'>" + currentYear + "<em>(" + $("[year='" + currentYear + "']").length + "篇)</em></h3>");
-			}
-			$(this).attr("year", currentYear);
-		});
-
-		$("#layout-archive-year h3").each(function() {
-			$("#layout-archive-year ul li[year='" + $(this).attr("class") + "'").wrapAll("<div year='" + $(this).attr("class") + "'></div>");
-			$("h3." + $(this).attr("class")).click(function() {
-				$(this).toggleClass("title-bg").next().slideToggle(300);
-			});
-		});
-		$("#layout-archive-year ul div[year!='" + Newy + "']").hide();
-		$("h3." + Newy).addClass("title-bg");
-
-		//TODO: Archive by month
-	};
-
-	/* Load more posts */
-	var Annie_LoadPost = function() {
-		$('body').on('click', paginationId, function() {
-
-			$(this).text(" ").addClass('annie-animation-2');
-
-			$.ajax({
-				type: "get",
-				url: $(this).attr("href"),
-				async: true,
-				error: function(request) {
-					//TODO: error
-				},
-				success: function(data) {
-					var result = $(data).find("#post"),
-						newhref = $(data).find(paginationId).attr("href");
-
-					$(paginationContainer).append(result.fadeIn(delayTimeG).addClass('annie-animation-1'));
-
-					$(paginationId).removeClass('annie-animation-2').text($(paginationId).attr('data-title'));
-
-					if(newhref != undefined) {
-						$(paginationId).attr("href", newhref);
-					} else {
-						$("#pagination").html("<span>" + $(paginationId).attr('data-status') + "</span>");
-					}
-				}
-			});
-			return false;
-		});
-	};
-
-	/* Switch 'relate' or 'comment' module */
-	var Annie_Tab = function() {
-		function tabs(tabTit, on, tabCon) {
-			$(tabCon).each(function() {
-				$(this).children().eq(0).show();
-			});
-
-			$(tabTit).each(function() {
-				$(this).children().eq(0).addClass(on);
-			});
-
-			$(tabTit).children().click(function() {
-				$(this).addClass(on).siblings().removeClass(on);
-				var index = $(tabTit).children().index(this);
-				$(tabCon).children().eq(index).show().siblings().hide();
-			});
-		}
-		tabs(".investment-title-1", "on", ".investment-content");
-	};
-
-	var Annie_TCP = function() {
-		$('.tags a, .category a').click(function() {
-			$("#TCP-title").text("查询结果");
-			//添加查询结果之前，清除容器中的内容
-			$("#TCP-content").text("");
-			var href = $(this).attr("href");
-			if(href != undefined) {
-				$.ajax({
-					url: href,
-					type: "get",
-					async: true,
-					error: function(request) {
-						//TODO: erro
-					},
-					success: function(data) {
-						var result = $(data).find(".layout-archive");
-						$('#TCP-content').append(result.fadeIn(500).addClass('annie-animation-1'));
-						$(".layout-archive").css({
-							'paddingTop': '0'
-						});
-						$(".layout-archive i").css({
-							'marginTop': '5px',
-							'marginBottom': '30px'
-						});
-					}
-				});
-			}
-			return false;
-		});
-		//TODO: We can use "Content filtering plugin" to instead this function!
-	};
-
-	var Annie_WordSet = function() {
-		//TODO: Need to do more work!
-
-		function responsiveFontSize(min, max, mid) {
-			var scopeId = '#article-content';
-			$(window).resize(function() {
-				var size = window.innerWidth / mid;
-
-				if(size < min) size = min;
-				if(size > max) size = max;
-
-				$(scopeId).css('font-size', size + 'px');
-			}).trigger('resize');
-		};
-
-		function manualSetFontSize() {
-			function removeUnit(str, originalChar, replacementChar) {
-				// Use 'replacementChar' to replace 'originalChar'
-				// Use getComputedStyle(document.getElementsByTagName("p")[0],undefined).fontSize to instead this function!
-				if(str)
-					return str.split(originalChar).join(replacementChar);
-			}
-
-			var scopeId = '#article-content', //Mrakdown h1,h2,h3?
-				minSize = 16,
-				maxSize = 20,
-				originalSize = $(scopeId).css('fontSize'),
-
-				size = removeUnit(originalSize, 'px', '');
-
-			$('.fontSizePlus').click(function() {
-				if(size < maxSize) {
-					size++;
-					$(scopeId).css({
-						'fontSize': size + 'px'
-					});
-				}
-				return false;
-			});
-
-			$('.fontSizeMinus').click(function() {
-				if(size > minSize) {
-					size--;
-					$(scopeId).css({
-						'fontSize': size + 'px'
-					});
-				}
-				return false;
-			});
-
-			//重置字体大小
-			$('.fontSizeReset').click(function() {
-				$(scopeId).css({
-					'fontSize': originalSize
-				});
-				return false;
-			});
-		};
-		//responsiveFontSize(16, 20, 100);
-		//manualSetFontSize();
-		//zh_init();
-	};
-
-	/* Other js functions */
-	/* ... */
-
-	/* Initialize */
-	(function Annie_Init() {
-		Annie_Preloader();
-		Annie_Nav();
-		Annie_Progress();
-		Annie_Toc();
-		Annie_ToAnchor();
-		Annie_Archive();
-		Annie_LoadPost();
-		Annie_Tab();
-		Annie_TCP();
-		Annie_WordSet();
-	})();
-});
+(function (w, d) {
+
+    var body = d.body,
+        $ = d.querySelector.bind(d),
+        $$ = d.querySelectorAll.bind(d),
+        root = $('html'),
+        gotop = $('#gotop'),
+        menu = $('#menu'),
+        header = $('#header'),
+        mask = $('#mask'),
+        menuToggle = $('#menu-toggle'),
+        menuOff = $('#menu-off'),
+        loading = $('#loading'),
+        animate = w.requestAnimationFrame,
+        scrollSpeed = 200 / (1000 / 60),
+        forEach = Array.prototype.forEach,
+        even = ('ontouchstart' in w && /Mobile|Android|iOS|iPhone|iPad|iPod|Windows Phone|KFAPWI/i.test(navigator.userAgent)) ? 'touchstart' : 'click',
+        isWX = /micromessenger/i.test(navigator.userAgent),
+        noop = function () { },
+        offset = function (el) {
+            var x = el.offsetLeft,
+                y = el.offsetTop;
+
+            if (el.offsetParent) {
+                var pOfs = arguments.callee(el.offsetParent);
+                x += pOfs.x;
+                y += pOfs.y;
+            }
+
+            return {
+                x: x,
+                y: y
+            };
+        },
+        rootScollTop = function() {
+            return d.documentElement.scrollTop || d.body.scrollTop;
+        };
+
+    var Blog = {
+        goTop: function (end) {
+            var top = rootScollTop();
+            var interval = arguments.length > 2 ? arguments[1] : Math.abs(top - end) / scrollSpeed;
+
+            if (top && top > end) {
+                w.scrollTo(0, Math.max(top - interval, 0));
+                animate(arguments.callee.bind(this, end, interval));
+            } else if (end && top < end) {
+                w.scrollTo(0, Math.min(top + interval, end));
+                animate(arguments.callee.bind(this, end, interval));
+            } else {
+                this.toc.actived(end);
+            }
+        },
+        toggleGotop: function (top) {
+            if (top > w.innerHeight / 2) {
+                gotop.classList.add('in');
+            } else {
+                gotop.classList.remove('in');
+            }
+        },
+        toggleMenu: function (flag) {
+            var main = $('#main');
+            if (flag) {
+                menu.classList.remove('hide');
+
+                if (w.innerWidth < 1241) {
+                    mask.classList.add('in');
+                    menu.classList.add('show');
+
+                    if (isWX) {
+                        var top = rootScollTop();
+                        main.classList.add('lock');
+                        main.scrollTop = top;
+                    } else {
+                        root.classList.add('lock');
+                    }
+                }
+
+            } else {
+                menu.classList.remove('show');
+                mask.classList.remove('in');
+                if (isWX) {
+                    var top = main.scrollTop;
+                    main.classList.remove('lock');
+                    w.scrollTo(0, top);
+                } else {
+                    root.classList.remove('lock');
+                }
+
+            }
+        },
+        fixedHeader: function (top) {
+            if (top > header.clientHeight) {
+                header.classList.add('fixed');
+            } else {
+                header.classList.remove('fixed');
+            }
+        },
+        toc: (function () {
+            var toc = $('#post-toc');
+
+            if (!toc || !toc.children.length) {
+                return {
+                    fixed: noop,
+                    actived: noop
+                }
+            }
+
+            var bannerH = $('.post-header').clientHeight,
+                headerH = header.clientHeight,
+                titles = $('#post-content').querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+            toc.querySelector('a[href="#' + titles[0].id + '"]').parentNode.classList.add('active');
+
+            // Make every child shrink initially
+            var tocChilds = toc.querySelectorAll('.post-toc-child');
+            for (i = 0, len = tocChilds.length; i < len; i++) {
+                tocChilds[i].classList.add('post-toc-shrink');
+            }
+            var firstChild =
+                toc.querySelector('a[href="#' + titles[0].id + '"]')
+                    .nextElementSibling;
+            if (firstChild) {
+                firstChild.classList.add('post-toc-expand');
+                firstChild.classList.remove('post-toc-shrink');
+            }
+            toc.classList.remove('post-toc-shrink');
+
+            /**
+             * Handle toc active and expansion
+             * @param prevEle previous active li element
+             * @param currEle current active li element
+             */
+            var handleTocActive = function (prevEle, currEle) {
+                prevEle.classList.remove('active');
+                currEle.classList.add('active');
+
+                var siblingChilds = currEle.parentElement.querySelectorAll('.post-toc-child');
+                for (j = 0, len1 = siblingChilds.length; j < len1; j++) {
+                    siblingChilds[j].classList.remove('post-toc-expand');
+                    siblingChilds[j].classList.add('post-toc-shrink');
+                }
+                var myChild = currEle.querySelector('.post-toc-child');
+                if (myChild) {
+                    myChild.classList.remove('post-toc-shrink');
+                    myChild.classList.add('post-toc-expand');
+                }
+            };
+
+            return {
+                fixed: function (top) {
+                    top >= bannerH - headerH ? toc.classList.add('fixed') : toc.classList.remove('fixed');
+                },
+                actived: function (top) {
+                    for (i = 0, len = titles.length; i < len; i++) {
+                        if (top > offset(titles[i]).y - headerH - 5) {
+                            var prevListEle = toc.querySelector('li.active');
+                            var currListEle = toc.querySelector('a[href="#' + titles[i].id + '"]').parentNode;
+
+                            handleTocActive(prevListEle, currListEle);
+                        }
+                    }
+
+                    if (top < offset(titles[0]).y) {
+                        handleTocActive(
+                            toc.querySelector('li.active'),
+                            toc.querySelector('a[href="#' + titles[0].id + '"]').parentNode
+                        );
+                    }
+                }
+            }
+        })(),
+        hideOnMask: [],
+        modal: function (target) {
+            this.$modal = $(target);
+            this.$off = this.$modal.querySelector('.close');
+
+            var _this = this;
+
+            this.show = function () {
+                mask.classList.add('in');
+                _this.$modal.classList.add('ready');
+                setTimeout(function () {
+                    _this.$modal.classList.add('in');
+                }, 0)
+            }
+
+            this.onHide = noop;
+
+            this.hide = function () {
+                _this.onHide();
+                mask.classList.remove('in');
+                _this.$modal.classList.remove('in');
+                setTimeout(function () {
+                    _this.$modal.classList.remove('ready');
+                }, 300)
+            }
+
+            this.toggle = function () {
+                return _this.$modal.classList.contains('in') ? _this.hide() : _this.show();
+            }
+
+            Blog.hideOnMask.push(this.hide);
+            this.$off && this.$off.addEventListener(even, this.hide);
+        },
+        share: function () {
+
+            var pageShare = $('#pageShare'),
+                fab = $('#shareFab');
+
+            var shareModal = new this.modal('#globalShare');
+
+            $('#menuShare').addEventListener(even, shareModal.toggle);
+
+            if (fab) {
+                fab.addEventListener(even, function () {
+                    pageShare.classList.toggle('in')
+                }, false)
+
+                d.addEventListener(even, function (e) {
+                    !fab.contains(e.target) && pageShare.classList.remove('in')
+                }, false)
+            }
+
+            var wxModal = new this.modal('#wxShare');
+            wxModal.onHide = shareModal.hide;
+
+            forEach.call($$('.wxFab'), function (el) {
+                el.addEventListener(even, wxModal.toggle)
+            })
+
+        },
+        search: function () {
+            var searchWrap = $('#search-wrap');
+
+            function toggleSearch() {
+                searchWrap.classList.toggle('in');
+            }
+
+            $('#search').addEventListener(even, toggleSearch);
+        },
+        reward: function () {
+            var modal = new this.modal('#reward');
+            $('#rewardBtn').addEventListener(even, modal.toggle);
+
+            var $rewardToggle = $('#rewardToggle');
+            var $rewardCode = $('#rewardCode');
+            if ($rewardToggle) {
+                $rewardToggle.addEventListener('change', function () {
+                    $rewardCode.src = this.checked ? this.dataset.alipay : this.dataset.wechat
+                })
+            }
+        },
+        waterfall: function () {
+
+            if (w.innerWidth < 760) return;
+
+            forEach.call($$('.waterfall'), function (el) {
+                var childs = el.querySelectorAll('.waterfall-item');
+                var columns = [0, 0];
+
+                forEach.call(childs, function (item) {
+                    var i = columns[0] <= columns[1] ? 0 : 1;
+                    item.style.cssText = 'top:' + columns[i] + 'px;left:' + (i > 0 ? '50%' : 0);
+                    columns[i] += item.offsetHeight;
+                })
+
+                el.style.height = Math.max(columns[0], columns[1]) + 'px';
+                el.classList.add('in')
+            })
+
+        },
+        tabBar: function (el) {
+            el.parentNode.parentNode.classList.toggle('expand')
+        },
+        page: (function () {
+            var $elements = $$('.fade, .fade-scale');
+            var visible = false;
+
+            return {
+                loaded: function () {
+                    forEach.call($elements, function (el) {
+                        el.classList.add('in')
+                    });
+                    visible = true;
+                },
+                unload: function () {
+                    forEach.call($elements, function (el) {
+                        el.classList.remove('in')
+                    });
+                    visible = false;
+                },
+                visible: visible
+            }
+
+        })(),
+        lightbox: (function () {
+
+            function LightBox(element) {
+                this.$img = element.querySelector('img');
+                this.$overlay = element.querySelector('overlay');
+                this.margin = 40;
+                this.title = this.$img.title || this.$img.alt || '';
+                this.isZoom = false;
+
+                var naturalW, naturalH, imgRect, docW, docH;
+
+                this.calcRect = function () {
+                    docW = body.clientWidth;
+                    docH = body.clientHeight;
+                    var inH = docH - this.margin * 2;
+                    var w = naturalW;
+                    var h = naturalH;
+                    var t = this.margin;
+                    var l = 0;
+                    var sw = w > docW ? docW / w : 1;
+                    var sh = h > inH ? inH / h : 1;
+                    var s = Math.min(sw, sh);
+
+                    w = w * s;
+                    h = h * s;
+
+                    return {
+                        w: w,
+                        h: h,
+                        t: (docH - h) / 2 - imgRect.top,
+                        l: (docW - w) / 2 - imgRect.left + this.$img.offsetLeft
+                    }
+                }
+
+                this.setImgRect = function (rect) {
+                    this.$img.style.cssText = 'width: ' + rect.w + 'px; max-width: ' + rect.w + 'px; height:' + rect.h + 'px; top: ' + rect.t + 'px; left: ' + rect.l + 'px';
+                }
+
+                this.setFrom = function () {
+                    this.setImgRect({
+                        w: imgRect.width,
+                        h: imgRect.height,
+                        t: 0,
+                        l: (element.offsetWidth - imgRect.width) / 2
+                    })
+                }
+
+                this.setTo = function () {
+                    this.setImgRect(this.calcRect());
+                }
+
+                // this.updateSize = function () {
+                //     var sw = sh = 1;
+                //     if (docW !== body.clientWidth) {
+                //         sw = body.clientWidth / docW;
+                //     }
+
+                //     if (docH !== body.clientHeight) {
+                //         sh = body.clientHeight / docH;
+                //     }
+
+                //     docW = body.clientWidth;
+                //     docH = body.clientHeight;
+                //     var rect = this.$img.getBoundingClientRect();
+                //     var w = rect.width * sw;
+                //     var h = rect.height * sh;
+
+                //     this.$img.classList.remove('zoom-in');
+                //     this.setImgRect({
+                //         w: w,
+                //         h: h,
+                //         t: this.$img.offsetTop - (h - rect.height) / 2,
+                //         l: this.$img.offsetLeft - (w - rect.width) / 2
+                //     })
+                // }
+
+                this.addTitle = function () {
+                    if (!this.title) {
+                        return;
+                    }
+                    this.$caption = d.createElement('div');
+                    this.$caption.innerHTML = this.title;
+                    this.$caption.className = 'overlay-title';
+                    element.appendChild(this.$caption);
+                }
+
+                this.removeTitle = function () {
+                    this.$caption && element.removeChild(this.$caption)
+                }
+
+                var _this = this;
+
+                this.zoomIn = function () {
+                    naturalW = this.$img.naturalWidth || this.$img.width;
+                    naturalH = this.$img.naturalHeight || this.$img.height;
+                    imgRect = this.$img.getBoundingClientRect();
+                    element.style.height = imgRect.height + 'px';
+                    element.classList.add('ready');
+                    this.setFrom();
+                    this.addTitle();
+                    this.$img.classList.add('zoom-in');
+
+                    setTimeout(function () {
+                        element.classList.add('active');
+                        _this.setTo();
+                        _this.isZoom = true;
+                    }, 0);
+                }
+
+                this.zoomOut = function () {
+                    this.isZoom = false;
+                    element.classList.remove('active');
+                    this.$img.classList.add('zoom-in');
+                    this.setFrom();
+                    setTimeout(function () {
+                        _this.$img.classList.remove('zoom-in');
+                        _this.$img.style.cssText = '';
+                        _this.removeTitle();
+                        element.classList.remove('ready');
+                        element.removeAttribute('style');
+                    }, 300);
+                }
+
+                element.addEventListener('click', function (e) {
+                    _this.isZoom ? _this.zoomOut() : e.target.tagName === 'IMG' && _this.zoomIn()
+                })
+
+                d.addEventListener('scroll', function () {
+                    _this.isZoom && _this.zoomOut()
+                })
+
+                w.addEventListener('resize', function () {
+                    // _this.isZoom && _this.updateSize()
+                    _this.isZoom && _this.zoomOut()
+                })
+            }
+
+            forEach.call($$('.img-lightbox'), function (el) {
+                new LightBox(el)
+            })
+        })(),
+        loadScript: function (scripts) {
+            scripts.forEach(function (src) {
+                var s = d.createElement('script');
+                s.src = src;
+                s.async = true;
+                body.appendChild(s);
+            })
+        }
+    };
+
+    w.addEventListener('load', function () {
+        loading.classList.remove('active');
+        Blog.page.loaded();
+        w.lazyScripts && w.lazyScripts.length && Blog.loadScript(w.lazyScripts)
+    });
+
+    w.addEventListener('DOMContentLoaded', function () {
+        Blog.waterfall();
+        var top = rootScollTop();
+        Blog.toc.fixed(top);
+        Blog.toc.actived(top);
+        Blog.page.loaded();
+    });
+
+    var ignoreUnload = false;
+    var $mailTarget = $('a[href^="mailto"]');
+    if($mailTarget) {
+        $mailTarget.addEventListener(even, function () {
+            ignoreUnload = true;
+        });
+    }
+
+    w.addEventListener('beforeunload', function (e) {
+        if (!ignoreUnload) {
+            Blog.page.unload();
+        } else {
+            ignoreUnload = false;
+        }
+    });
+
+    w.addEventListener('pageshow', function () {
+        // fix OSX safari #162
+        !Blog.page.visible && Blog.page.loaded();
+    });
+
+    w.addEventListener('resize', function () {
+        w.BLOG.even = even = 'ontouchstart' in w ? 'touchstart' : 'click';
+        Blog.toggleMenu();
+        Blog.waterfall();
+    });
+
+    gotop.addEventListener(even, function () {
+        animate(Blog.goTop.bind(Blog, 0));
+    }, false);
+
+    menuToggle.addEventListener(even, function (e) {
+        Blog.toggleMenu(true);
+        e.preventDefault();
+    }, false);
+
+    menuOff.addEventListener(even, function () {
+        menu.classList.add('hide');
+    }, false);
+
+    mask.addEventListener(even, function (e) {
+        Blog.toggleMenu();
+        Blog.hideOnMask.forEach(function (hide) {
+            hide()
+        });
+        e.preventDefault();
+    }, false);
+
+    d.addEventListener('scroll', function () {
+        var top = rootScollTop();
+        Blog.toggleGotop(top);
+        Blog.fixedHeader(top);
+        Blog.toc.fixed(top);
+        Blog.toc.actived(top);
+    }, false);
+
+    if (w.BLOG.SHARE) {
+        Blog.share()
+    }
+
+    if (w.BLOG.REWARD) {
+        Blog.reward()
+    }
+
+    Blog.noop = noop;
+    Blog.even = even;
+    Blog.$ = $;
+    Blog.$$ = $$;
+
+    Object.keys(Blog).reduce(function (g, e) {
+        g[e] = Blog[e];
+        return g
+    }, w.BLOG);
+
+    if (w.Waves) {
+        Waves.init();
+        Waves.attach('.global-share li', ['waves-block']);
+        Waves.attach('.article-tag-list-link, #page-nav a, #page-nav span', ['waves-button']);
+    } else {
+        console.error('Waves loading failed.')
+    }
+})(window, document);

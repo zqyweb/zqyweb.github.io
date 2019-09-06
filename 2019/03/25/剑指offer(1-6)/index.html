@@ -1,323 +1,201 @@
-<!--
-	作者：Sariay
-	时间：2018-09-25
-	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
--->
-
-	<!DOCTYPE html>
-	<html class="scrollbar">
-		
-
+<!DOCTYPE html>
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-	<meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-  <title>
     
-       | Hexo
+
     
-  </title>
-  <meta name="author" content="John Doe">
-  <meta name="keywords" content>
-  <meta name="description" content>
-	<!-- favicon -->
-  <link rel="shortcut icon" href="/img/favicon.ico">
 
-  <!-- css -->
-  <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+    
 
-    <!-- jquery -->
-	<script src="/js/jquery-2.1.1.min.js"></script>
 
-  <!-- leancloud -->
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-<script src="/js/leancloud.js"></script>
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content>
+    <meta name="description" content="@剑指offer 1. 二维数组中的查找在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 思路   [     [1,2,3,4],     [2,3,4,5],     [3,4,5,6],     [4,5,6,7]   ] 根据这个数组的特点，可以发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/03/25/剑指offer(1-6)/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="@剑指offer 1. 二维数组中的查找在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 思路   [     [1,2,3,4],     [2,3,4,5],     [3,4,5,6],     [4,5,6,7]   ] 根据这个数组的特点，可以发">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1502611/201903/1502611-20190325204459123-970878480.jpg">
+<meta property="og:updated_time" content="2019-03-25T13:15:07.492Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="@剑指offer 1. 二维数组中的查找在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 思路   [     [1,2,3,4],     [2,3,4,5],     [3,4,5,6],     [4,5,6,7]   ] 根据这个数组的特点，可以发">
+<meta name="twitter:image" content="https://img2018.cnblogs.com/blog/1502611/201903/1502611-20190325204459123-970878480.jpg">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
-	<body>
-		<!-- Preloader -->
 
-	<div id="preloader">
-		<div class="pre-container">
-			
-				<div class="transition">
-					<div class="three-bounce1"></div>
-					<div class="three-bounce2"></div>
-					<div class="three-bounce3"></div>
-				</div>
-						
-		</div>
-	</div>
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Zhang Quan yu</h5>
+          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis"></div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title"></h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-03-25T13:16:05.677Z" itemprop="datePublished" class="page-time">
+  2019-03-25
+</time>
 
 
-<!-- header -->
-<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
-	<div class="mask">
-		<div class="h-header">
-			<div id="logo-S">
-				
-					<a href="/">
-						<img src="/img/logo.png" alt="Logo">
-					</a>
-				
-			</div>
-			<!-- Navigation in header(id="navigation-S") -->
-			<div id="navigation-S">
-				<ul>
-					
-						<li class="menu-home">
-							<a href="/" class="menu-item-home">主页</a>
-						</li>
-					
-						<li class="menu-archive">
-							<a href="/archives" class="menu-item-archive">归档</a>
-						</li>
-					
-						<li class="menu-categories">
-							<a href="/categories" class="menu-item-categories">分类</a>
-						</li>
-					
-						<li class="menu-tags">
-							<a href="/tags" class="menu-item-tags">标签</a>
-						</li>
-					
-						<li class="menu-about">
-							<a href="/about" class="menu-item-about">关于</a>
-						</li>
-					
-						<li class="menu-gallery">
-							<a href="/gallery" class="menu-item-gallery">相册</a>
-						</li>
-					
+            
+        </h5>
+    </div>
 
-					
-				</ul>			
-			</div>				
-		</div>
-
-		<div class="h-body">	
-			<!-- motto -->
-			
-				<div id="page-motto">
-					<p class="motto">
-						
-					</p>
-				</div>
-			
-
-			<div id="navigation-H">
-				<!-- Page title -->
-				<p>
-					
-						当前文章&nbsp;:&nbsp;《》
-					
-				</p>
-				<!-- Progress bar -->
-				<div id="progress-bar"></div>
-
-				<!-- Progress percent -->
-				<div id="progress-percentage">
-					<h1>0.0%</h1>
-				</div>
-			</div>
-		</div>
-		
-		<!-- others: such as time... -->			
-		<div class="h-footer">
-			<ul>
-				<li>
-					<a><i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>切换背景</a>
-				</li>
-				<li>
-					<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down"></i>继续阅读</a>
-				</li>
-				<li>
-					<a href="https://github.com/Sariay/hexo-theme-Annie" target="_blank"><i class="fa fa-download"></i>克隆主题</a>
-				</li>
-			</ul>
-		</div>
-		
-		<!-- This is only a demo, please go to "https://time.is" to set your city time! -->
-<style type="text/css">
-	.header-date {
-		position: absolute;
-		left: 40px;
-		bottom: 30px;
-		writing-mode: tb-rl;
-		font-size: 36px;
-	}	
-	.header-date a {
-		border-bottom: none;
-	}
-	@media only screen and (max-width: 768 ) {
-		.header-date {
-			position: absolute;
-			left: 40px;
-			bottom: 30px;
-			writing-mode: tb-rl;
-			font-size: 20px;
-		}			
-	}
-</style>
-<div class="header-date">
-	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
-	<span id="Beijing_z43d"></span>
-</div>
-<script src="//widget.time.is/zh.js"></script>
-<script>
-	time_is_widget.init({
-		Beijing_z43d:{
-			template:"DATE", 
-			date_format:"year年 monthname dnum日"
-		}
-	});
-</script>
-</div></header>
-
-<!-- Navigation in div(id="navigation-H") -->
-<a class="nav-trigger">
-	<span></span>
-</a>
-
-<nav class="nav-container" id="cd-nav">
-	<div class="nav-header">
-		<h3>Navigation</h3>
-		<a href="javascript:;" class="nav-close"></a>
-	</div>
-	<div class="nav-body">
-		<ul>
-			
-				<li class="menu-home">
-					<a href="/" class="menu-item-home">主页</a>
-				</li>
-			
-				<li class="menu-archive">
-					<a href="/archives" class="menu-item-archive">归档</a>
-				</li>
-			
-				<li class="menu-categories">
-					<a href="/categories" class="menu-item-categories">分类</a>
-				</li>
-			
-				<li class="menu-tags">
-					<a href="/tags" class="menu-item-tags">标签</a>
-				</li>
-			
-				<li class="menu-about">
-					<a href="/about" class="menu-item-about">关于</a>
-				</li>
-			
-				<li class="menu-gallery">
-					<a href="/gallery" class="menu-item-gallery">相册</a>
-				</li>
-			
-
-			
-		</ul>
-	</div>
-
-	<div class="nav-footer">
-		<ul>
-	
-		
-			<li>
-				<a href="http://github.com/" title="Github" target="_blank">
-					<i class="fa fa-github"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="http://github.com/" title="Weibo" target="_blank">
-					<i class="fa fa-weibo"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="mailto:http://github.com/" title="Email" target="_blank">
-					<i class="fa fa-envelope-o"></i>
-				</a>
-			</li>
-		
-
-		
-			<li>
-				<a href="http://github.com/" title="QQ" target="_blank">
-					<i class="fa fa-qq"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="http://github.com/" title="Twitter" target="_blank">
-					<i class="fa fa-twitter"></i>
-				</a>
-			</li>
-		
-	 
-</ul>
-	</div>
-</nav>
-
-		
-		<!--main-->
-		<main>
-			<div class="layout-post">
-	
-	
-	<div class="article-title">
-		
-	</div>
-
-	<div class="article-meta">
-		<span>
-			
-	发布于
-	<a href="/2019/03/25/剑指offer(1-6)/" itemprop="url">
-		<time datetime="2019-03-25T13:16:05.677Z" itemprop="datePublished">
-	  		2019-03-25
-	  </time>
-	</a> 
-
-	/
-	更新于
-	<a href="/2019/03/25/剑指offer(1-6)/" itemprop="url">
-		<time datetime="2019-03-25T13:16:05.677Z" itemprop="dateUpdated">
-	  		2019-03-25
-	  </time>
-	</a> 	
-
-		</span>
-		/
-		<span>
-			<i class="fa fa-tags"></i>
-					
-		</span>
-		/
-		
-
-    <span class="leancloud_visitors" id="/2019/03/25/剑指offer(1-6)/_visitors" data-url="/2019/03/25/剑指offer(1-6)/" data-title>
-        热度
-        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
-    </span>
     
-    /
 
 
+</header>
 
-    <span class="leancloud_likes" id="/2019/03/25/剑指offer(1-6)/_likes" data-url="/2019/03/25/剑指offer(1-6)/" data-title rel="unlike">
-        喜欢
-        <i class="fa fa-heart"></i>
-        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
-    </span>
 
-	</div>
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-二维数组中的查找"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 二维数组中的查找</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-替换空格"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.替换空格</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-从尾到头打印链表"><span class="post-toc-number">3.</span> <span class="post-toc-text">3.从尾到头打印链表</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-重建二叉树"><span class="post-toc-number">4.</span> <span class="post-toc-text">4.重建二叉树</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-用两个栈实现队列"><span class="post-toc-number">5.</span> <span class="post-toc-text">5.用两个栈实现队列</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#6-旋转数组的最小数字"><span class="post-toc-number">6.</span> <span class="post-toc-text">6.旋转数组的最小数字</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#7-斐波那契数列"><span class="post-toc-number">7.</span> <span class="post-toc-text">7.斐波那契数列</span></a></li></ol>
+        </nav>
+    </aside>
 
-	<div class="article-content" id="article-content">
-		<p>@<a href="学习">剑指offer</a></p>
+
+<article id="post-剑指offer(1-6)" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title"></h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-03-25 21:16:05" datetime="2019-03-25T13:16:05.677Z" itemprop="datePublished">2019-03-25</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>@<a href="学习">剑指offer</a></p>
 <h1 id="1-二维数组中的查找"><a href="#1-二维数组中的查找" class="headerlink" title="1. 二维数组中的查找"></a>1. 二维数组中的查找</h1><p>在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
 <p><strong>思路</strong></p>
 <pre><code>  [
@@ -426,7 +304,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>1.整体思路是元素先依次进入栈1，再从栈1依次弹出到栈2，然后弹出栈2顶部的元素，整个过程就是一个队列的先进先出</li>
 <li>2.但是在交换元素的时候需要判断两个栈的元素情况：<br>“进队列时”，队列中是还还有元素，若有，说明栈2中的元素不为空，此时就先将栈2的元素倒回到栈1 中，保持在“进队列状态”。<br>“出队列时”，将栈1的元素全部弹到栈2中，保持在“出队列状态”。<br>所以要做的判断是，进时，栈2是否为空，不为空，则栈2元素倒回到栈1，出时，将栈1元素全部弹到栈2中，直到栈1为空。</li>
 </ul>
-<p><img src="https://img2018.cnblogs.com/blog/1502611/201903/1502611-20190325204459123-970878480.jpg" alt></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img2018.cnblogs.com/blog/1502611/201903/1502611-20190325204459123-970878480.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 <pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> stack1<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>stack2<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">function</span> <span class="token function">push</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -486,291 +370,295 @@ console<span class="token punctuation">.</span><span class="token function">log<
       <span class="token keyword">return</span> f2<span class="token punctuation">;</span><span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-	
-	</div>
-	
-	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
 
-	<!-- relate post, comment...-->
-	<div class="investment-container">
-		<div class="investment-header">
-			<div class="investment-title-1">
-				<div class="on">相关文章</div>
-				<div>评论</div>
-			</div>
-			<div class="investment-title-2">	            
-				
-	<span>
-		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
-		
-			<a href="/2019/03/25/BFC与ifc/" title rel="prev">
-				&laquo;上一篇
-			</a>
-		
-			
-	</span>
-      		
-			</div>	
-		</div>
-		
-		<div class="investment-content">
-			<div class="investment-content-list">
-				
+        </div>
 
-<div class="relate-post">
-	<ul>
-		
-				<li>
-					<div>
-						<a href="/2019/03/25/水平垂直居中/" title="水平垂直居中">
-							水平垂直居中
-						</a>
-						<p>
-							文字水平垂直居中一行文字的水平垂直居中对齐方式&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;&gt;
-   ...
-						</p>
-					</div>
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-03-25T13:15:07.492Z" itemprop="dateUpdated">2019-03-25 21:15:07</time>
+</span><br>
 
-					<a href="/2019/03/25/水平垂直居中/" title="水平垂直居中">				
-						<img src="/img/cart_cover.jpg" class="relateImg" alt="水平垂直居中">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2019/03/25/Web API/" title="WEB API">
-							WEB API
-						</a>
-						<p>
-							DOM树核心DOM和HTML DOM
-核心DOM：操作一切结构化文档的统一API
-特点：繁琐！万能！
 
-HTML DOM:专门操作HTML文档的简化版DOM API
-特点：简洁，不是万能！
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/03/25/剑指offer(1-6)/" target="_blank" rel="external">http://yoursite.com/2019/03/25/剑指offer(1-6)/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="Zhang Quan yu">
+            Zhang Quan yu
+        </a>
+    </footer>
+</blockquote>
 
-节点对象：Node
-三大属性：nodeTy...
-						</p>
-					</div>
-
-					<a href="/2019/03/25/Web API/" title="WEB API">				
-						<img src="/img/cart_cover.jpg" class="relateImg" alt="WEB API">
-					</a>
-				</li>											
-		
-		
-	</ul>
-</div>	
-			</div>
-			<div class="investment-content-list">
-				<div class="layout-comment">
-
-	
-
-		
-
-			<!-- I don't know 【表情】-->
-			
-		
-		
-	
-
-</div>
-			</div>
-		</div>	
-	</div>
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
 </div>
 
 
 
-	<!-- leancloud -->
-	<!--
-	时间：2018-11-27
-	描述：
-		文章访问量：visitors
-		文章喜欢量：likes	
-		文章排行榜：topNPost
-		其他得说明：
-			01-Cookie相关的函数 
-				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
-			02-visitors相关的函数 
-				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
-				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
-			03-topNPost相关的函数
-				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
-			04-likes相关的函数，
-				参考了01 & 02进行简单的设计与实现
--->
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/03/25/剑指offer(1-6)/&title=Hexo&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/03/25/剑指offer(1-6)/&title=Hexo&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/25/剑指offer(1-6)/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Hexo&url=http://yoursite.com/2019/03/25/剑指offer(1-6)/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/25/剑指offer(1-6)/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
 
 
 
-	<script>
-		var appid = 'dX--',
-            appkey = 'dx--';	  
-        AnnieLeancloud(appid, appkey);         
-	</script>
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/03/25/Web API/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">WEB API</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
     
 
 
- 
-
-<!-- show math formula -->
 
 
 
 
-<!-- TODO: There seems to be a bug when you close the post gallery! -->
-<link rel="stylesheet" href="/plugin/lightgallery/css/lightgallery.css">
-<script src="/plugin/lightgallery/js/jquery-1.11.0.min.js"></script>
-<script src="/plugin/lightgallery/js/lightgallery-all.min.js"></script>
 
-<script type="text/javascript">
-	var postTitle = $('.article-title a').text() ? $('.article-title a').text() : "No post title!";
-	$('.article-content img').each(function() {
-		var imgPath = $(this).attr('src'),
-			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
-		$(this).wrap('<div class="img-responsive" data-src="' + imgPath + '" data-responsive="' + imgPath + '" data-sub-html="<p>图片 ' + imgTitle + '</p><h4>文章' + postTitle + '</h4>"></div>');
-	});
 
-	$('.article-content').lightGallery({
-		mode: 'lg-slide',
-		selector: '.img-responsive',
-		share: false,
-		zoom: false,
-		download: false
-	});
-	//TODO：支持video
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Zhang Quan yu &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/03/25/剑指offer(1-6)/&title=Hexo&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/03/25/剑指offer(1-6)/&title=Hexo&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/25/剑指offer(1-6)/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Hexo&url=http://yoursite.com/2019/03/25/剑指offer(1-6)/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/25/剑指offer(1-6)/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/03/25/剑指offer(1-6)/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
 </script>
 
-<!--
-	时间：2018-11-17
-	描述：
-		插件名称：katelog.min.js
-		插件作者：KELEN
-		插件来源: https://github.com/KELEN/katelog
--->
-
-		
-
-		<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
-		<script src="/plugin/toc/katelog.min.js"></script>
-
-		
-	
-		</main>
-		
-		<!--footer-->
-		<footer>
-	<div class="social">
-		<ul>
-	
-		
-			<li>
-				<a href="http://github.com/" title="Github" target="_blank">
-					<i class="fa fa-github"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="http://github.com/" title="Weibo" target="_blank">
-					<i class="fa fa-weibo"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="mailto:http://github.com/" title="Email" target="_blank">
-					<i class="fa fa-envelope-o"></i>
-				</a>
-			</li>
-		
-
-		
-			<li>
-				<a href="http://github.com/" title="QQ" target="_blank">
-					<i class="fa fa-qq"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="http://github.com/" title="Twitter" target="_blank">
-					<i class="fa fa-twitter"></i>
-				</a>
-			</li>
-		
-	 
-</ul>
-	</div>
-		
-	<div class="copyright">
-		<p>
-			 
-				&copy;2017 - 2019, content by John Doe. All Rights Reserved.
-			
-			
-			
-
-	<!-- busuanzi -->
-	<!-- busuanzi -->
-
-		
-	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	
-
-		<span id="busuanzi_container_page_pv">
-	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-		</span>
-
-	
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
 
-
-		</p>
-		<p>
-			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay. 					
-		</p>
-	</div>		
-</footer>
-		
-    <!-- set '1' to show motto in all pages! -->
-
-	<script src="/js/motto.js"></script>
-	<script type="text/javascript">
-		$(".motto").html( getMingYanContent() );
-	</script>	
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
 
 
 
-    <script src="/js/love.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
-<!--back to top-->
 
-    
-	<div id="totop">
-  		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a>
-	</div>
-	<div id="tobuttom">
-		<a href="javascript:;" name="TOBUTTOM" class="fa fa-arrow-down"></a>
-	</div>
- 
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
 
 
- 
 
-<script src="/js/vibrant.js"></script>
-<script src="/js/chinese.js"></script>
-<script src="/js/main.js"></script>
-	</body>
-	</html>
+</body>
+</html>

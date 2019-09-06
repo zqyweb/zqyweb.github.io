@@ -1,1094 +1,820 @@
-<!--
-	作者：Sariay
-	时间：2018-09-25
-	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
--->
-
-	<!DOCTYPE html>
-	<html class="scrollbar">
-		
-
+<!DOCTYPE html>
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-	<meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-  <title>
     
-      Hexo
+
     
-  </title>
-  <meta name="author" content="John Doe">
-  <meta name="keywords" content>
-  <meta name="description" content>
-	<!-- favicon -->
-  <link rel="shortcut icon" href="/img/favicon.ico">
 
-  <!-- css -->
-  <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+    
 
-    <!-- jquery -->
-	<script src="/js/jquery-2.1.1.min.js"></script>
 
-  <!-- leancloud -->
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-<script src="/js/leancloud.js"></script>
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content>
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
-	<body>
-		<!-- Preloader -->
 
-	<div id="preloader">
-		<div class="pre-container">
-			
-				<div class="transition">
-					<div class="three-bounce1"></div>
-					<div class="three-bounce2"></div>
-					<div class="three-bounce3"></div>
-				</div>
-						
-		</div>
-	</div>
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Zhang Quan yu</h5>
+          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect active">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Hexo</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header index-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Hexo</h1>
+        <h5 class="subtitle">
+            
+                
+            
+        </h5>
+    </div>
+
+    
 
 
-<!-- header -->
-<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
-	<div class="mask">
-		<div class="h-header">
-			<div id="logo-S">
-				
-					<a href="/">
-						<img src="/img/logo.png" alt="Logo">
-					</a>
-				
-			</div>
-			<!-- Navigation in header(id="navigation-S") -->
-			<div id="navigation-S">
-				<ul>
-					
-						<li class="menu-home">
-							<a href="/" class="menu-item-home">主页</a>
-						</li>
-					
-						<li class="menu-archive">
-							<a href="/archives" class="menu-item-archive">归档</a>
-						</li>
-					
-						<li class="menu-categories">
-							<a href="/categories" class="menu-item-categories">分类</a>
-						</li>
-					
-						<li class="menu-tags">
-							<a href="/tags" class="menu-item-tags">标签</a>
-						</li>
-					
-						<li class="menu-about">
-							<a href="/about" class="menu-item-about">关于</a>
-						</li>
-					
-						<li class="menu-gallery">
-							<a href="/gallery" class="menu-item-gallery">相册</a>
-						</li>
-					
+</header>
 
-					
-				</ul>			
-			</div>				
-		</div>
+<div class="container body-wrap">
 
-		<div class="h-body">	
-			<!-- motto -->
-			
-				<div id="page-motto">
-					<p class="motto">
-						
-					</p>
-				</div>
-			
+    <ul class="post-list">
+    
+        <li class="post-list-item fade">
+            <article id="post-页面布局/三栏布局/三栏布局之grid" class="article-card article-type-post" itemprop="blogPost">
 
-			<div id="navigation-H">
-				<!-- Page title -->
-				<p>
-					
-						主页
-					
-				</p>
-				<!-- Progress bar -->
-				<div id="progress-bar"></div>
+    <div class="post-meta">
+        <time class="post-time" title="2019-03-29 15:07:11" datetime="2019-03-29T07:07:11.576Z" itemprop="datePublished">2019-03-29</time>
 
-				<!-- Progress percent -->
-				<div id="progress-percentage">
-					<h1>0.0%</h1>
-				</div>
-			</div>
-		</div>
-		
-		<!-- others: such as time... -->			
-		<div class="h-footer">
-			<ul>
-				<li>
-					<a><i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>切换背景</a>
-				</li>
-				<li>
-					<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down"></i>继续阅读</a>
-				</li>
-				<li>
-					<a href="https://github.com/Sariay/hexo-theme-Annie" target="_blank"><i class="fa fa-download"></i>克隆主题</a>
-				</li>
-			</ul>
-		</div>
-		
-		<!-- This is only a demo, please go to "https://time.is" to set your city time! -->
-<style type="text/css">
-	.header-date {
-		position: absolute;
-		left: 40px;
-		bottom: 30px;
-		writing-mode: tb-rl;
-		font-size: 36px;
-	}	
-	.header-date a {
-		border-bottom: none;
-	}
-	@media only screen and (max-width: 768 ) {
-		.header-date {
-			position: absolute;
-			left: 40px;
-			bottom: 30px;
-			writing-mode: tb-rl;
-			font-size: 20px;
-		}			
-	}
-</style>
-<div class="header-date">
-	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
-	<span id="Beijing_z43d"></span>
-</div>
-<script src="//widget.time.is/zh.js"></script>
-<script>
-	time_is_widget.init({
-		Beijing_z43d:{
-			template:"DATE", 
-			date_format:"year年 monthname dnum日"
-		}
-	});
-</script>
-</div></header>
+        
 
-<!-- Navigation in div(id="navigation-H") -->
-<a class="nav-trigger">
-	<span></span>
-</a>
 
-<nav class="nav-container" id="cd-nav">
-	<div class="nav-header">
-		<h3>Navigation</h3>
-		<a href="javascript:;" class="nav-close"></a>
-	</div>
-	<div class="nav-body">
-		<ul>
-			
-				<li class="menu-home">
-					<a href="/" class="menu-item-home">主页</a>
-				</li>
-			
-				<li class="menu-archive">
-					<a href="/archives" class="menu-item-archive">归档</a>
-				</li>
-			
-				<li class="menu-categories">
-					<a href="/categories" class="menu-item-categories">分类</a>
-				</li>
-			
-				<li class="menu-tags">
-					<a href="/tags" class="menu-item-tags">标签</a>
-				</li>
-			
-				<li class="menu-about">
-					<a href="/about" class="menu-item-about">关于</a>
-				</li>
-			
-				<li class="menu-gallery">
-					<a href="/gallery" class="menu-item-gallery">相册</a>
-				</li>
-			
+    </div>
 
-			
-		</ul>
-	</div>
+    
 
-	<div class="nav-footer">
-		<ul>
-	
-		
-			<li>
-				<a href="http://github.com/" title="Github" target="_blank">
-					<i class="fa fa-github"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="http://github.com/" title="Weibo" target="_blank">
-					<i class="fa fa-weibo"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="mailto:http://github.com/" title="Email" target="_blank">
-					<i class="fa fa-envelope-o"></i>
-				</a>
-			</li>
-		
 
-		
-			<li>
-				<a href="http://github.com/" title="QQ" target="_blank">
-					<i class="fa fa-qq"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="http://github.com/" title="Twitter" target="_blank">
-					<i class="fa fa-twitter"></i>
-				</a>
-			</li>
-		
-	 
-</ul>
-	</div>
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/03/29/页面布局/三栏布局/三栏布局之grid/">No title</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+
+  
+    
+    三栏布局之grid
+    
+      body,p{margin: 0;}
+      .top,.bottom{height: 30px;}
+      .middle{display:grid;grid-template-columns:100px 1fr 100px;grid-gap:20px;}
+      .main{grid-area:1/2/2/...
+    
+
+        <a href="/2019/03/29/页面布局/三栏布局/三栏布局之grid/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-页面布局/三栏布局/三栏布局之flex" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-03-29 15:04:31" datetime="2019-03-29T07:04:31.328Z" itemprop="datePublished">2019-03-29</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/03/29/页面布局/三栏布局/三栏布局之flex/">No title</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+
+  
+    
+    三栏布局之flex
+    
+      body,p{margin: 0;}
+      .top,.bottom{height: 30px;}
+      .middle{display: flex;}
+      .left,.right{width: 100px;}
+      .right{order: 2;}
+      .main{
+        ...
+    
+
+        <a href="/2019/03/29/页面布局/三栏布局/三栏布局之flex/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-页面布局/三栏布局/三栏布局之absolute" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-03-29 15:01:12" datetime="2019-03-29T07:01:12.233Z" itemprop="datePublished">2019-03-29</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/03/29/页面布局/三栏布局/三栏布局之absolute/">No title</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+
+  
+    
+    三栏布局之absolute
+    
+      body,p{margin: 0;}
+      .top,.bottom{height: 30px;}
+      .middle{
+        position: relative;
+        height: 40px;
+      }
+      .left,.right,.main{
+      ...
+    
+
+        <a href="/2019/03/29/页面布局/三栏布局/三栏布局之absolute/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-页面布局/三栏布局/三栏布局之float+box sizong+background-clip" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-03-29 14:54:31" datetime="2019-03-29T06:54:31.748Z" itemprop="datePublished">2019-03-29</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/03/29/页面布局/三栏布局/三栏布局之float+box sizong+background-clip/">No title</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+
+  
+    
+    三栏布局之float + box-sizing + background-clip
+    
+      body,p{
+        margin: 0;
+      }
+      .top,.bottom{
+        height: 30px;
+      }
+      .middle{
+        overflow: hidden;
+    ...
+    
+
+        <a href="/2019/03/29/页面布局/三栏布局/三栏布局之float+box sizong+background-clip/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-页面布局/三栏布局" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-03-29 13:51:11" datetime="2019-03-29T05:51:11.707Z" itemprop="datePublished">2019-03-29</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/03/29/页面布局/三栏布局/">No title</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        #圣杯布局布局要求：
+
+三列布局，中间宽度自适应，两边定宽
+中间栏要在浏览器中优先展示渲染
+允许任意列的高度最高
+
+&lt;div class="header">header&lt;/div>
+&lt;div class="container">
+  &lt;div class="main">main&lt;/div>
+  &lt;div class="left">left&lt;/div>...
+    
+
+        <a href="/2019/03/29/页面布局/三栏布局/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-页面布局/三栏布局/2.1圣杯布局" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-03-29 11:04:34" datetime="2019-03-29T03:04:34.300Z" itemprop="datePublished">2019-03-29</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/03/29/页面布局/三栏布局/2.1圣杯布局/">No title</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+
+
+    
+    圣杯布局
+    
+        *{margin: 0;padding: 0;}
+        body{min-width: 700px;}
+        .header,
+        .footer{
+            border: 1px solid #333;
+            background: #aaa;
+          ...
+    
+
+        <a href="/2019/03/29/页面布局/三栏布局/2.1圣杯布局/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-页面布局/页面布局demo/1.4去除列表最后一个li元素的border-bottom" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-03-29 10:49:28" datetime="2019-03-29T02:49:28.360Z" itemprop="datePublished">2019-03-29</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/03/29/页面布局/页面布局demo/1.4去除列表最后一个li元素的border-bottom/">No title</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+
+  
+    
+    1.4去除列表最后一个li元素的border-bottom
+    
+      *{
+        margin:0;
+        padding:0;
+      }
+      .div{
+        width:200px;
+        border:5px solid red;
+        margin:20px 0 0 20px;
+ ...
+    
+
+        <a href="/2019/03/29/页面布局/页面布局demo/1.4去除列表最后一个li元素的border-bottom/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-页面布局/页面布局demo/1.3负边距加定位实现水平垂直居中" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-03-29 10:31:27" datetime="2019-03-29T02:31:27.463Z" itemprop="datePublished">2019-03-29</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/03/29/页面布局/页面布局demo/1.3负边距加定位实现水平垂直居中/">No title</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+
+  
+    
+    负边距加定位实现水平垂直居中
+    
+      .div1{
+        width:200px;
+        height:200px;
+        position:relative;
+        border: 1px solid red;
+      }
+      .div2{
+        width:100px;
+       ...
+    
+
+        <a href="/2019/03/29/页面布局/页面布局demo/1.3负边距加定位实现水平垂直居中/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-页面布局/页面布局demo/1.2去除列表右边框" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-03-29 10:15:12" datetime="2019-03-29T02:15:12.594Z" itemprop="datePublished">2019-03-29</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/03/29/页面布局/页面布局demo/1.2去除列表右边框/">No title</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+
+  
+    
+    去除列表右边框
+    
+      *{
+        margin:0;
+        padding:0;
+      }
+      .div1{
+        width:780px;
+        height:380px;
+        margin:0 auto;
+        border:3px solid skyblue;
+   ...
+    
+
+        <a href="/2019/03/29/页面布局/页面布局demo/1.2去除列表右边框/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-页面布局/页面布局demo/1.1负边距" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-03-29 10:01:32" datetime="2019-03-29T02:01:32.072Z" itemprop="datePublished">2019-03-29</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/03/29/页面布局/页面布局demo/1.1负边距/">No title</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+
+  
+    
+    负边距--向上移动
+    
+      *{
+        margin:0;
+        padding:0;
+      }
+      .div{
+        width:100%;
+        height:200px;
+      }
+      .div1{
+        height:100px;
+        backgroun...
+    
+
+        <a href="/2019/03/29/页面布局/页面布局demo/1.1负边距/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+    </ul>
+
+    
+<nav id="page-nav">
+    <div class="inner">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    </div>
 </nav>
 
-		
-		<!--main-->
-		<main>
-			
-
-
-
-	<!--cart style-->
-	<div class="layout-cart">
-	<div id="layout-cart">
-		
-		<div class="post" id="post">
-			<a class="post-cover" href="/2019/03/25/Ajax/" title="  ">
-				<img src="/img/cart_cover.jpg">
-			</a>
-
-			<div class="post-text">
-				<p class="post-time">
-					三月 25日, 2019
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2019/03/25/Ajax/" title>
-						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-						
-					</a>
-				</h3>
-				<p class="post-content">
-					
-						@TOC
-Ajax学习1.原生Ajax// 使用Ajax发送请求需要如下几步：
-
-//1.创建XMLHttpRequest对象
-var xhr = new...
-					
-				</p>
-				<p class="post-meta">
-					
-
-    <span class="leancloud_visitors" id="/2019/03/25/Ajax/_visitors" data-url="/2019/03/25/Ajax/" data-title>
-        热度
-        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
-    </span>
-    
-    /
-
-
-
-    <span class="leancloud_likes" id="/2019/03/25/Ajax/_likes" data-url="/2019/03/25/Ajax/" data-title rel="unlike">
-        喜欢
-        <i class="fa fa-heart"></i>
-        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
-    </span>
-
-					
-
-	<!-- leancloud -->
-	<!--
-	时间：2018-11-27
-	描述：
-		文章访问量：visitors
-		文章喜欢量：likes	
-		文章排行榜：topNPost
-		其他得说明：
-			01-Cookie相关的函数 
-				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
-			02-visitors相关的函数 
-				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
-				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
-			03-topNPost相关的函数
-				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
-			04-likes相关的函数，
-				参考了01 & 02进行简单的设计与实现
--->
-
-
-
-	<script>
-		var appid = 'dX--',
-            appkey = 'dx--';	  
-        AnnieLeancloud(appid, appkey);         
-	</script>
-    
-
-
- 
-				</p>
-			</div>
-		</div>
-		
-		<div class="post" id="post">
-			<a class="post-cover" href="/2019/03/25/水平垂直居中/" title=" 水平垂直居中 ">
-				<img src="/img/cart_cover.jpg">
-			</a>
-
-			<div class="post-text">
-				<p class="post-time">
-					三月 25日, 2019
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2019/03/25/水平垂直居中/" title="水平垂直居中">
-						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-						
-	<a href="/2019/03/25/水平垂直居中/" itemprop="url">
-		水平垂直居中
-	</a>
-
-					</a>
-				</h3>
-				<p class="post-content">
-					
-						文字水平垂直居中一行文字的水平垂直居中对齐方式&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &l...
-					
-				</p>
-				<p class="post-meta">
-					
-
-    <span class="leancloud_visitors" id="/2019/03/25/水平垂直居中/_visitors" data-url="/2019/03/25/水平垂直居中/" data-title="水平垂直居中">
-        热度
-        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
-    </span>
-    
-    /
-
-
-
-    <span class="leancloud_likes" id="/2019/03/25/水平垂直居中/_likes" data-url="/2019/03/25/水平垂直居中/" data-title="水平垂直居中" rel="unlike">
-        喜欢
-        <i class="fa fa-heart"></i>
-        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
-    </span>
-
-					
-
-	<!-- leancloud -->
-	<!--
-	时间：2018-11-27
-	描述：
-		文章访问量：visitors
-		文章喜欢量：likes	
-		文章排行榜：topNPost
-		其他得说明：
-			01-Cookie相关的函数 
-				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
-			02-visitors相关的函数 
-				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
-				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
-			03-topNPost相关的函数
-				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
-			04-likes相关的函数，
-				参考了01 & 02进行简单的设计与实现
--->
-
-
-
-	<script>
-		var appid = 'dX--',
-            appkey = 'dx--';	  
-        AnnieLeancloud(appid, appkey);         
-	</script>
-    
-
-
- 
-				</p>
-			</div>
-		</div>
-		
-		<div class="post" id="post">
-			<a class="post-cover" href="/2019/03/25/三次握手和四次挥手过程/" title="  ">
-				<img src="/img/cart_cover.jpg">
-			</a>
-
-			<div class="post-text">
-				<p class="post-time">
-					三月 25日, 2019
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2019/03/25/三次握手和四次挥手过程/" title>
-						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-						
-					</a>
-				</h3>
-				<p class="post-content">
-					
-						三次握手（1）三次握手的详述
-首先Client端发送连接请求报文，Server段接受连接后回复ACK报文，并为这次连接分配资源。Client端接收到ACK...
-					
-				</p>
-				<p class="post-meta">
-					
-
-    <span class="leancloud_visitors" id="/2019/03/25/三次握手和四次挥手过程/_visitors" data-url="/2019/03/25/三次握手和四次挥手过程/" data-title>
-        热度
-        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
-    </span>
-    
-    /
-
-
-
-    <span class="leancloud_likes" id="/2019/03/25/三次握手和四次挥手过程/_likes" data-url="/2019/03/25/三次握手和四次挥手过程/" data-title rel="unlike">
-        喜欢
-        <i class="fa fa-heart"></i>
-        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
-    </span>
-
-					
-
-	<!-- leancloud -->
-	<!--
-	时间：2018-11-27
-	描述：
-		文章访问量：visitors
-		文章喜欢量：likes	
-		文章排行榜：topNPost
-		其他得说明：
-			01-Cookie相关的函数 
-				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
-			02-visitors相关的函数 
-				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
-				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
-			03-topNPost相关的函数
-				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
-			04-likes相关的函数，
-				参考了01 & 02进行简单的设计与实现
--->
-
-
-
-	<script>
-		var appid = 'dX--',
-            appkey = 'dx--';	  
-        AnnieLeancloud(appid, appkey);         
-	</script>
-    
-
-
- 
-				</p>
-			</div>
-		</div>
-		
-		<div class="post" id="post">
-			<a class="post-cover" href="/2019/03/25/缓存机制/" title="  ">
-				<img src="/img/cart_cover.jpg">
-			</a>
-
-			<div class="post-text">
-				<p class="post-time">
-					三月 25日, 2019
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2019/03/25/缓存机制/" title>
-						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-						
-					</a>
-				</h3>
-				<p class="post-content">
-					
-						#
-HTTP报文就是浏览器和服务器间通信时发送及响应的数据块。
-浏览器向服务器请求数据，发送请求(request)报文；服务器向浏览器返回数据，返回响应(...
-					
-				</p>
-				<p class="post-meta">
-					
-
-    <span class="leancloud_visitors" id="/2019/03/25/缓存机制/_visitors" data-url="/2019/03/25/缓存机制/" data-title>
-        热度
-        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
-    </span>
-    
-    /
-
-
-
-    <span class="leancloud_likes" id="/2019/03/25/缓存机制/_likes" data-url="/2019/03/25/缓存机制/" data-title rel="unlike">
-        喜欢
-        <i class="fa fa-heart"></i>
-        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
-    </span>
-
-					
-
-	<!-- leancloud -->
-	<!--
-	时间：2018-11-27
-	描述：
-		文章访问量：visitors
-		文章喜欢量：likes	
-		文章排行榜：topNPost
-		其他得说明：
-			01-Cookie相关的函数 
-				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
-			02-visitors相关的函数 
-				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
-				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
-			03-topNPost相关的函数
-				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
-			04-likes相关的函数，
-				参考了01 & 02进行简单的设计与实现
--->
-
-
-
-	<script>
-		var appid = 'dX--',
-            appkey = 'dx--';	  
-        AnnieLeancloud(appid, appkey);         
-	</script>
-    
-
-
- 
-				</p>
-			</div>
-		</div>
-		
-		<div class="post" id="post">
-			<a class="post-cover" href="/2019/03/25/盒模型/" title="  ">
-				<img src="/img/cart_cover.jpg">
-			</a>
-
-			<div class="post-text">
-				<p class="post-time">
-					三月 25日, 2019
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2019/03/25/盒模型/" title>
-						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-						
-					</a>
-				</h3>
-				<p class="post-content">
-					
-						@TOC
-盒模型概念所谓盒子模型就是把HTML页面中的元素看作是一个矩形的盒子，也就是一个盛装内容的容器。每个矩形都由元素的内容、内边距（padding）...
-					
-				</p>
-				<p class="post-meta">
-					
-
-    <span class="leancloud_visitors" id="/2019/03/25/盒模型/_visitors" data-url="/2019/03/25/盒模型/" data-title>
-        热度
-        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
-    </span>
-    
-    /
-
-
-
-    <span class="leancloud_likes" id="/2019/03/25/盒模型/_likes" data-url="/2019/03/25/盒模型/" data-title rel="unlike">
-        喜欢
-        <i class="fa fa-heart"></i>
-        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
-    </span>
-
-					
-
-	<!-- leancloud -->
-	<!--
-	时间：2018-11-27
-	描述：
-		文章访问量：visitors
-		文章喜欢量：likes	
-		文章排行榜：topNPost
-		其他得说明：
-			01-Cookie相关的函数 
-				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
-			02-visitors相关的函数 
-				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
-				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
-			03-topNPost相关的函数
-				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
-			04-likes相关的函数，
-				参考了01 & 02进行简单的设计与实现
--->
-
-
-
-	<script>
-		var appid = 'dX--',
-            appkey = 'dx--';	  
-        AnnieLeancloud(appid, appkey);         
-	</script>
-    
-
-
- 
-				</p>
-			</div>
-		</div>
-		
-		<div class="post" id="post">
-			<a class="post-cover" href="/2019/03/25/浮动与定位/" title="  ">
-				<img src="/img/cart_cover.jpg">
-			</a>
-
-			<div class="post-text">
-				<p class="post-time">
-					三月 25日, 2019
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2019/03/25/浮动与定位/" title>
-						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-						
-					</a>
-				</h3>
-				<p class="post-content">
-					
-						浮动(float) 普通流(normal flow)
-CSS的定位机制有3种：普通流（标准流）、浮动和定位。
-html语言当中另外一个相当重要的概念———...
-					
-				</p>
-				<p class="post-meta">
-					
-
-    <span class="leancloud_visitors" id="/2019/03/25/浮动与定位/_visitors" data-url="/2019/03/25/浮动与定位/" data-title>
-        热度
-        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
-    </span>
-    
-    /
-
-
-
-    <span class="leancloud_likes" id="/2019/03/25/浮动与定位/_likes" data-url="/2019/03/25/浮动与定位/" data-title rel="unlike">
-        喜欢
-        <i class="fa fa-heart"></i>
-        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
-    </span>
-
-					
-
-	<!-- leancloud -->
-	<!--
-	时间：2018-11-27
-	描述：
-		文章访问量：visitors
-		文章喜欢量：likes	
-		文章排行榜：topNPost
-		其他得说明：
-			01-Cookie相关的函数 
-				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
-			02-visitors相关的函数 
-				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
-				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
-			03-topNPost相关的函数
-				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
-			04-likes相关的函数，
-				参考了01 & 02进行简单的设计与实现
--->
-
-
-
-	<script>
-		var appid = 'dX--',
-            appkey = 'dx--';	  
-        AnnieLeancloud(appid, appkey);         
-	</script>
-    
-
-
- 
-				</p>
-			</div>
-		</div>
-		
-		<div class="post" id="post">
-			<a class="post-cover" href="/2019/03/25/Web API/" title=" WEB API ">
-				<img src="/img/cart_cover.jpg">
-			</a>
-
-			<div class="post-text">
-				<p class="post-time">
-					三月 25日, 2019
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2019/03/25/Web API/" title="WEB API">
-						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-						
-	<a href="/2019/03/25/Web API/" itemprop="url">
-		WEB API
-	</a>
-
-					</a>
-				</h3>
-				<p class="post-content">
-					
-						DOM树核心DOM和HTML DOM
-核心DOM：操作一切结构化文档的统一API
-特点：繁琐！万能！
-
-HTML DOM:专门操作HTML文档的简化版DO...
-					
-				</p>
-				<p class="post-meta">
-					
-
-    <span class="leancloud_visitors" id="/2019/03/25/Web API/_visitors" data-url="/2019/03/25/Web API/" data-title="WEB API">
-        热度
-        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
-    </span>
-    
-    /
-
-
-
-    <span class="leancloud_likes" id="/2019/03/25/Web API/_likes" data-url="/2019/03/25/Web API/" data-title="WEB API" rel="unlike">
-        喜欢
-        <i class="fa fa-heart"></i>
-        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
-    </span>
-
-					
-
-	<!-- leancloud -->
-	<!--
-	时间：2018-11-27
-	描述：
-		文章访问量：visitors
-		文章喜欢量：likes	
-		文章排行榜：topNPost
-		其他得说明：
-			01-Cookie相关的函数 
-				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
-			02-visitors相关的函数 
-				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
-				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
-			03-topNPost相关的函数
-				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
-			04-likes相关的函数，
-				参考了01 & 02进行简单的设计与实现
--->
-
-
-
-	<script>
-		var appid = 'dX--',
-            appkey = 'dx--';	  
-        AnnieLeancloud(appid, appkey);         
-	</script>
-    
-
-
- 
-				</p>
-			</div>
-		</div>
-		
-		<div class="post" id="post">
-			<a class="post-cover" href="/2019/03/25/BFC与ifc/" title="  ">
-				<img src="/img/cart_cover.jpg">
-			</a>
-
-			<div class="post-text">
-				<p class="post-time">
-					三月 25日, 2019
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2019/03/25/BFC与ifc/" title>
-						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-						
-					</a>
-				</h3>
-				<p class="post-content">
-					
-						BFC原理详解在解释BFC之前，需要先介绍Box,Formatting Context的概念。
-1.Box:CSS布局的基本单位Box是css布局的对象和...
-					
-				</p>
-				<p class="post-meta">
-					
-
-    <span class="leancloud_visitors" id="/2019/03/25/BFC与ifc/_visitors" data-url="/2019/03/25/BFC与ifc/" data-title>
-        热度
-        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
-    </span>
-    
-    /
-
-
-
-    <span class="leancloud_likes" id="/2019/03/25/BFC与ifc/_likes" data-url="/2019/03/25/BFC与ifc/" data-title rel="unlike">
-        喜欢
-        <i class="fa fa-heart"></i>
-        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
-    </span>
-
-					
-
-	<!-- leancloud -->
-	<!--
-	时间：2018-11-27
-	描述：
-		文章访问量：visitors
-		文章喜欢量：likes	
-		文章排行榜：topNPost
-		其他得说明：
-			01-Cookie相关的函数 
-				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
-			02-visitors相关的函数 
-				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
-				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
-			03-topNPost相关的函数
-				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
-			04-likes相关的函数，
-				参考了01 & 02进行简单的设计与实现
--->
-
-
-
-	<script>
-		var appid = 'dX--',
-            appkey = 'dx--';	  
-        AnnieLeancloud(appid, appkey);         
-	</script>
-    
-
-
- 
-				</p>
-			</div>
-		</div>
-		
-		<div class="post" id="post">
-			<a class="post-cover" href="/2019/03/25/剑指offer(1-6)/" title="  ">
-				<img src="/img/cart_cover.jpg">
-			</a>
-
-			<div class="post-text">
-				<p class="post-time">
-					三月 25日, 2019
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2019/03/25/剑指offer(1-6)/" title>
-						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-						
-					</a>
-				</h3>
-				<p class="post-content">
-					
-						@剑指offer
-1. 二维数组中的查找在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序...
-					
-				</p>
-				<p class="post-meta">
-					
-
-    <span class="leancloud_visitors" id="/2019/03/25/剑指offer(1-6)/_visitors" data-url="/2019/03/25/剑指offer(1-6)/" data-title>
-        热度
-        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
-    </span>
-    
-    /
-
-
-
-    <span class="leancloud_likes" id="/2019/03/25/剑指offer(1-6)/_likes" data-url="/2019/03/25/剑指offer(1-6)/" data-title rel="unlike">
-        喜欢
-        <i class="fa fa-heart"></i>
-        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
-    </span>
-
-					
-
-	<!-- leancloud -->
-	<!--
-	时间：2018-11-27
-	描述：
-		文章访问量：visitors
-		文章喜欢量：likes	
-		文章排行榜：topNPost
-		其他得说明：
-			01-Cookie相关的函数 
-				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
-			02-visitors相关的函数 
-				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
-				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
-			03-topNPost相关的函数
-				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
-			04-likes相关的函数，
-				参考了01 & 02进行简单的设计与实现
--->
-
-
-
-	<script>
-		var appid = 'dX--',
-            appkey = 'dx--';	  
-        AnnieLeancloud(appid, appkey);         
-	</script>
-    
-
-
- 
-				</p>
-			</div>
-		</div>
-		
-	</div>
-	
-	
-	<div id="pagination">
-		
-	</div>
 
 </div>
-	
 
-		</main>
-		
-		<!--footer-->
-		<footer>
-	<div class="social">
-		<ul>
-	
-		
-			<li>
-				<a href="http://github.com/" title="Github" target="_blank">
-					<i class="fa fa-github"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="http://github.com/" title="Weibo" target="_blank">
-					<i class="fa fa-weibo"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="mailto:http://github.com/" title="Email" target="_blank">
-					<i class="fa fa-envelope-o"></i>
-				</a>
-			</li>
-		
-
-		
-			<li>
-				<a href="http://github.com/" title="QQ" target="_blank">
-					<i class="fa fa-qq"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="http://github.com/" title="Twitter" target="_blank">
-					<i class="fa fa-twitter"></i>
-				</a>
-			</li>
-		
-	 
-</ul>
-	</div>
-		
-	<div class="copyright">
-		<p>
-			 
-				&copy;2017 - 2019, content by John Doe. All Rights Reserved.
-			
-			
-			
-
-	<!-- busuanzi -->
-	<!-- busuanzi -->
-
-		
-	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	
-
-		<span id="busuanzi_container_site_pv">
-	    	本站总访问量<span id="busuanzi_value_site_pv"></span>次
-		</span>
-
-		<span id="busuanzi_container_site_uv">
-	  		本站访客数<span id="busuanzi_value_site_uv"></span>人次
-		</span>
-		
-	
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
 
 
-
-
-		</p>
-		<p>
-			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay. 					
-		</p>
-	</div>		
+        <p>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Zhang Quan yu &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
 </footer>
-		
-    <!-- set '1' to show motto in all pages! -->
 
-	<script src="/js/motto.js"></script>
-	<script type="text/javascript">
-		$(".motto").html( getMingYanContent() );
-	</script>	
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
 
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/&title=Hexo&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/&title=Hexo&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Hexo&url=http://yoursite.com/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/" alt="微信分享二维码">
+</div>
 
 
 
-    <script src="/js/love.js"></script>
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
-<!--back to top-->
+</script>
 
-    
-	<div id="totop">
-  		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a>
-	</div>
-	<div id="tobuttom">
-		<a href="javascript:;" name="TOBUTTOM" class="fa fa-arrow-down"></a>
-	</div>
- 
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
- 
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
 
-<script src="/js/vibrant.js"></script>
-<script src="/js/chinese.js"></script>
-<script src="/js/main.js"></script>
-	</body>
-	</html>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
