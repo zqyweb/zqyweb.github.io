@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-29T07:09:06.056Z</updated>
+  <updated>2019-09-08T13:34:03.099Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>多方式实现三栏布局</title>
+    <link href="http://yoursite.com/2019/09/08/%E5%A4%9A%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0%E4%B8%89%E6%A0%8F%E5%B8%83%E5%B1%80/"/>
+    <id>http://yoursite.com/2019/09/08/多方式实现三栏布局/</id>
+    <published>2019-09-08T13:02:56.000Z</published>
+    <updated>2019-09-08T13:34:03.099Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前端知识"><a href="#前端知识" class="headerlink" title="前端知识"></a>前端知识</h1><p>##1.用最多的方式实现三栏布局？</p><pre><code>&lt;div class=&quot;container&quot;&gt;    &lt;div class=&quot;center&quot;&gt;center&lt;/div&gt;    &lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;    &lt;div class=&quot;right&quot;&gt;right&lt;/div&gt;&lt;/div&gt;</code></pre><h3 id="1-圣杯布局"><a href="#1-圣杯布局" class="headerlink" title="1. 圣杯布局"></a>1. 圣杯布局</h3><pre><code>    .container {        overflow: hidden;        padding: 0 200px;    }    .container&gt;div {        position: relative;        float: left;        height: 100px;    }    .center {        width: 100%;        background-color: red;    }    .left {        width: 200px;        background-color: green;        margin-left: -100%;        left: -200px;    }    .right {        width: 200px;        background-color: blue;        margin-left: -200px;        right: -200px;    }</code></pre><h3 id="2-flex布局"><a href="#2-flex布局" class="headerlink" title="2. flex布局"></a>2. flex布局</h3><pre><code>.container {        display: flex;    }    .center {        background-color: red;        width: 100%;        order: 2;    }    .left {        background-color: green;        width: 200px;        flex-shrink: 0;        order: 1;    }    .right {        background-color: blue;        width: 200px;        flex-shrink: 0;        order: 3;    }</code></pre><h3 id="3-绝对定位布局"><a href="#3-绝对定位布局" class="headerlink" title="3. 绝对定位布局"></a>3. 绝对定位布局</h3><pre><code>.center {        position: absolute;        left: 200px;        right: 200px;        height: 300px;        background-color: yellow;    }    .left {        position: absolute;        left: 0px;        width: 200px;        height: 300px;        background-color: red;    }    .right {        position: absolute;        right: 0px;        width: 200px;        background-color: green;        height: 300px;    }</code></pre><h3 id="4-双飞翼布局"><a href="#4-双飞翼布局" class="headerlink" title="4. 双飞翼布局"></a>4. 双飞翼布局</h3><pre><code>.container {        overflow: hidden;    }    .container&gt;div {        position: relative;        float: left;        height: 100px;    }    .center {        width: 100%;        background-color: red;    }    .left {        width: 200px;        background-color: green;        margin-left: -100%;    }    .right {        width: 200px;        background-color: blue;        margin-left: -200px;    }    .main {        height: 100%;        margin: 0 200px;        background-color: rosybrown;        overflow: hidden;    }</code></pre><p>##2.float布局对后续元素的影响？</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;前端知识&quot;&gt;&lt;a href=&quot;#前端知识&quot; class=&quot;headerlink&quot; title=&quot;前端知识&quot;&gt;&lt;/a&gt;前端知识&lt;/h1&gt;&lt;p&gt;##1.用最多的方式实现三栏布局？&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;container
+      
+    
+    </summary>
+    
+    
+    
+      <category term="HTML CSS" scheme="http://yoursite.com/tags/HTML-CSS/"/>
+    
+  </entry>
   
   <entry>
     <title></title>

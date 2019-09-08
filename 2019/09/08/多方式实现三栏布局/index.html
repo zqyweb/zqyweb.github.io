@@ -14,24 +14,25 @@
     
     
     
-    <title>No title | Web学习博客</title>
+    <title>多方式实现三栏布局 | Web学习博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content>
-    <meta name="description" content="负边距加定位实现水平垂直居中            .div1{         width:200px;         height:200px;         position:relative;         border: 1px solid red;       }       .div2{         width:100px;         he">
+    <meta name="keywords" content="HTML CSS">
+    <meta name="description" content="前端知识##1.用最多的方式实现三栏布局？ &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;     &amp;lt;div class=&amp;quot;center&amp;quot;&amp;gt;center&amp;lt;/div&amp;gt;     &amp;lt;div class=&amp;quot;left&amp;quot;&amp;gt;left&amp;lt;/div&amp;gt;     &amp;lt;div class=&amp;quot;">
+<meta name="keywords" content="HTML CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="No title">
-<meta property="og:url" content="http://yoursite.com/2019/03/29/页面布局/页面布局demo/1.3负边距加定位实现水平垂直居中/index.html">
+<meta property="og:title" content="多方式实现三栏布局">
+<meta property="og:url" content="http://yoursite.com/2019/09/08/多方式实现三栏布局/index.html">
 <meta property="og:site_name" content="Web学习博客">
-<meta property="og:description" content="负边距加定位实现水平垂直居中            .div1{         width:200px;         height:200px;         position:relative;         border: 1px solid red;       }       .div2{         width:100px;         he">
+<meta property="og:description" content="前端知识##1.用最多的方式实现三栏布局？ &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;     &amp;lt;div class=&amp;quot;center&amp;quot;&amp;gt;center&amp;lt;/div&amp;gt;     &amp;lt;div class=&amp;quot;left&amp;quot;&amp;gt;left&amp;lt;/div&amp;gt;     &amp;lt;div class=&amp;quot;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-29T02:47:56.056Z">
+<meta property="og:updated_time" content="2019-09-08T13:34:03.099Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="No title">
-<meta name="twitter:description" content="负边距加定位实现水平垂直居中            .div1{         width:200px;         height:200px;         position:relative;         border: 1px solid red;       }       .div2{         width:100px;         he">
+<meta name="twitter:title" content="多方式实现三栏布局">
+<meta name="twitter:description" content="前端知识##1.用最多的方式实现三栏布局？ &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;     &amp;lt;div class=&amp;quot;center&amp;quot;&amp;gt;center&amp;lt;/div&amp;gt;     &amp;lt;div class=&amp;quot;left&amp;quot;&amp;gt;left&amp;lt;/div&amp;gt;     &amp;lt;div class=&amp;quot;">
     
         <link rel="alternate" type="application/atom+xml" title="Web学习博客" href="/atom.xml">
     
@@ -127,7 +128,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis"></div>
+        <div class="flex-col header-title ellipsis">多方式实现三栏布局</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -149,11 +150,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title"></h1>
+        <h1 class="title">多方式实现三栏布局</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-03-29T02:31:27.463Z" itemprop="datePublished" class="page-time">
-  2019-03-29
+                <time datetime="2019-09-08T13:02:56.000Z" itemprop="datePublished" class="page-time">
+  2019-09-08
 </time>
 
 
@@ -169,14 +170,20 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前端知识"><span class="post-toc-number">1.</span> <span class="post-toc-text">前端知识</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-圣杯布局"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">1. 圣杯布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-flex布局"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">2. flex布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-绝对定位布局"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">3. 绝对定位布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-双飞翼布局"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">4. 双飞翼布局</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
 
-<article id="post-页面布局/页面布局demo/1.3负边距加定位实现水平垂直居中"
-  class="post-article article-type-post fade" itemprop="blogPost">
+
+<article id="post-多方式实现三栏布局" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title"></h1>
+        <h1 class="post-card-title">多方式实现三栏布局</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-03-29 10:31:27" datetime="2019-03-29T02:31:27.463Z" itemprop="datePublished">2019-03-29</time>
+            <time class="post-time" title="2019-09-08 21:02:56" datetime="2019-09-08T13:02:56.000Z" itemprop="datePublished">2019-09-08</time>
 
             
 
@@ -189,41 +196,121 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
-    <title>负边距加定位实现水平垂直居中</title>
-    <style>
-      .div1{
-        width:200px;
-        height:200px;
-        position:relative;
-        border: 1px solid red;
-      }
-      .div2{
-        width:100px;
-        height:100px;
-        background:pink;
+            <h1 id="前端知识"><a href="#前端知识" class="headerlink" title="前端知识"></a>前端知识</h1><p>##1.用最多的方式实现三栏布局？</p>
+<pre><code>&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;center&quot;&gt;center&lt;/div&gt;
+    &lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;right&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h3 id="1-圣杯布局"><a href="#1-圣杯布局" class="headerlink" title="1. 圣杯布局"></a>1. 圣杯布局</h3><pre><code>    .container {
+        overflow: hidden;
+        padding: 0 200px;
+    }
+
+    .container&gt;div {
+        position: relative;
+        float: left;
+        height: 100px;
+    }
+
+    .center {
+        width: 100%;
+        background-color: red;
+    }
+
+    .left {
+        width: 200px;
+        background-color: green;
+        margin-left: -100%;
+        left: -200px;
+    }
+
+    .right {
+        width: 200px;
+        background-color: blue;
+        margin-left: -200px;
+        right: -200px;
+    }
+</code></pre><h3 id="2-flex布局"><a href="#2-flex布局" class="headerlink" title="2. flex布局"></a>2. flex布局</h3><pre><code>.container {
+        display: flex;
+    }
+
+    .center {
+        background-color: red;
+        width: 100%;
+        order: 2;
+    }
+
+    .left {
+        background-color: green;
+        width: 200px;
+        flex-shrink: 0;
+        order: 1;
+    }
+
+    .right {
+        background-color: blue;
+        width: 200px;
+        flex-shrink: 0;
+        order: 3;
+    }
+</code></pre><h3 id="3-绝对定位布局"><a href="#3-绝对定位布局" class="headerlink" title="3. 绝对定位布局"></a>3. 绝对定位布局</h3><pre><code>.center {
         position: absolute;
-        /*left/top:子盒子相对父盒子的一半，此时在右下角*/
-  			left: 50%;
-  			top:50%;
-        /*transform：相对自身元素走自己盒子的一半*/
-  			transform: translate(-50%,-50%);
-      }
-    </style>
-  <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
-  <body>
-    <div class="div1">
-      <div class="div2">
+        left: 200px;
+        right: 200px;
+        height: 300px;
+        background-color: yellow;
+    }
 
-      </div>
-    </div>
+    .left {
+        position: absolute;
+        left: 0px;
+        width: 200px;
+        height: 300px;
+        background-color: red;
+    }
 
-  </body>
-</html>
+    .right {
+        position: absolute;
+        right: 0px;
+        width: 200px;
+        background-color: green;
+        height: 300px;
+    }
+</code></pre><h3 id="4-双飞翼布局"><a href="#4-双飞翼布局" class="headerlink" title="4. 双飞翼布局"></a>4. 双飞翼布局</h3><pre><code>.container {
+        overflow: hidden;
+    }
+
+    .container&gt;div {
+        position: relative;
+        float: left;
+        height: 100px;
+    }
+
+    .center {
+        width: 100%;
+        background-color: red;
+    }
+
+    .left {
+        width: 200px;
+        background-color: green;
+        margin-left: -100%;
+    }
+
+    .right {
+        width: 200px;
+        background-color: blue;
+        margin-left: -200px;
+    }
+
+    .main {
+        height: 100%;
+        margin: 0 200px;
+        background-color: rosybrown;
+        overflow: hidden;
+    }
+</code></pre><p>##2.float布局对后续元素的影响？</p>
 
         </div>
 
@@ -232,12 +319,12 @@
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2019-03-29T02:47:56.056Z" itemprop="dateUpdated">2019-03-29 10:47:56</time>
+    最終更新：<time datetime="2019-09-08T13:34:03.099Z" itemprop="dateUpdated">2019-09-08 21:34:03</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/03/29/页面布局/页面布局demo/1.3负边距加定位实现水平垂直居中/" target="_blank" rel="external">http://yoursite.com/2019/03/29/页面布局/页面布局demo/1.3负边距加定位实现水平垂直居中/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/09/08/多方式实现三栏布局/" target="_blank" rel="external">http://yoursite.com/2019/09/08/多方式实现三栏布局/</a>
         
     </div>
     
@@ -258,6 +345,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML CSS</a></li></ul>
+
 
             
 <div class="page-share-wrap">
@@ -266,7 +355,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/03/29/页面布局/页面布局demo/1.3负边距加定位实现水平垂直居中/&title=Web学习博客&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/09/08/多方式实现三栏布局/&title=《多方式实现三栏布局》 — Web学习博客&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -276,22 +365,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/03/29/页面布局/页面布局demo/1.3负边距加定位实现水平垂直居中/&title=Web学习博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/09/08/多方式实现三栏布局/&title=《多方式实现三栏布局》 — Web学习博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/29/页面布局/页面布局demo/1.3负边距加定位实现水平垂直居中/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/09/08/多方式实现三栏布局/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Web学习博客&url=http://yoursite.com/2019/03/29/页面布局/页面布局demo/1.3负边距加定位实现水平垂直居中/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《多方式实现三栏布局》 — Web学习博客&url=http://yoursite.com/2019/09/08/多方式实现三栏布局/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/29/页面布局/页面布局demo/1.3负边距加定位实现水平垂直居中/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/09/08/多方式实现三栏布局/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -311,21 +400,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2019/03/29/页面布局/页面布局demo/1.4去除列表最后一个li元素的border-bottom/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">[no title]</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/03/29/页面布局/页面布局demo/1.2去除列表右边框/" id="post-next" class="post-nav-link">
+      <a href="/2019/03/29/页面布局/三栏布局/三栏布局之grid/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">[no title]</h4>
+        <h4 class="title">No title</h4>
       </a>
     </div>
   
@@ -424,7 +506,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/03/29/页面布局/页面布局demo/1.3负边距加定位实现水平垂直居中/&title=《No title》 — Web学习博客&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/09/08/多方式实现三栏布局/&title=《多方式实现三栏布局》 — Web学习博客&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -434,22 +516,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/03/29/页面布局/页面布局demo/1.3负边距加定位实现水平垂直居中/&title=《No title》 — Web学习博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/09/08/多方式实现三栏布局/&title=《多方式实现三栏布局》 — Web学习博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/29/页面布局/页面布局demo/1.3负边距加定位实现水平垂直居中/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/09/08/多方式实现三栏布局/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《No title》 — Web学习博客&url=http://yoursite.com/2019/03/29/页面布局/页面布局demo/1.3负边距加定位实现水平垂直居中/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《多方式实现三栏布局》 — Web学习博客&url=http://yoursite.com/2019/09/08/多方式实现三栏布局/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/29/页面布局/页面布局demo/1.3负边距加定位实现水平垂直居中/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/09/08/多方式实现三栏布局/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -460,7 +542,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD3klEQVR42u3aSW7cQBAEQP3/0zLgkw/WKLOS4wUInoQRxe4OCqip5eMjvj5/Xl998vnL1d6T35/8bX7/dOHAgQMHjuCoX12v79kPlqyev5LXK0anwIEDBw4cD3EkR0oOnPxVvvX82LcgjQMHDhw4/i7HbZnX9yypWh6YceDAgQPHv8+xp2S3Mt87XgkOHDhw4HgHR37gfFttwXEBvRU3ceDAgQPHOzjagYb/8ec3znfgwIEDB444xLZpWz429zrQtgXKx86FAwcOHDieCRHFknmSlj8hKQ7mx35g0AEHDhw4cDzKkTeB2sQpH2vIy463QP4NNA4cOHDgmDn2NtKzjaJ9eCL5GvENDQ4cOHDgmDnysHrr47SjbO1vb2t9czocOHDgwDFwJOEqL/blm2uPdCtE1mknDhw4cOAYOG6DC/t0XlsKzNPCaWwOBw4cOHA8xNEuvJQLkxGEWzOsbXd9GWhx4MCBA8fbOJJS2p5W5YGwLSPWoR0HDhw4cAwct/C2JGNJcyspTS7HxoEDBw4c7+O4ldXyrbfNqlvhMnl+/lUABw4cOHAsHHuoa8cI8oB3SwKXnePAgQMHjp1jGWtbRtluzaf287x0+JtwiwMHDhw4Bo4o/Axp1W1IItlb27Iq0kgcOHDgwDFwLIlWW0BsA+dC3KZ2OHDgwIFj50hC5p+Z18vJbruKRitw4MCBA8cbONqBszxg3wLtHv6LoQocOHDgwDFz1BXEU9HtVsJrD3x7cjTcgAMHDhw4So52sCDZbpt63UJjPgBXFBZx4MCBA8fAcRtH2wtzSbq1N6Xy3+LAgQMHjqc4ngpvRWtnPvxtV3mTDAcOHDhwLBxty2cfMmi3uAf4HB0HDhw4cOwc+YDCDW5/2q2M+EDnDQcOHDhwnDiW8NYuf3tXyYGLN//6dDhw4MCBY+a4hdu8XZQPE+RlwdtwQ/s0HDhw4MBxe1rbQGobPHt+1MLdkrpjPw0HDhw4cMwlwjytahO/vYnVvuBiygMHDhw4cMQcbeqVp2FLOrcfLE8UceDAgQPHOzj2ds5y55I05gE4OjUOHDhw4Jg5kuStvWcp2N1Wf/jJOHDgwIFjePJnebXtpSWFy5O0tuAY/V/gwIEDB44TxxKcbkMJT41Q3Pbw8dSFAwcOHDjKYYJ2HC1J8NpC4RLOl7YWDhw4cOB4iuO2ZJ507QF+GlaIQzIOHDhw4PhbHElj6RaS87DdjtBFxUEcOHDgwPEHOZ4t2CUVuWTF2ypf3okDBw4cOB7iaIuDS4Bsk7F25GJ5YThw4MCBY+d4qkjXjrstgfbWcFrKnThw4MCBI+D4Aa0vgjyhmB1nAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJklEQVR42u3aS47bQAwFQN//0g6QVTYW3iOVZNyqXhmCRurSgtP8vF7xev9ef/7OryT3X1+/bWFgYHwt4325rhmzjc4+2ad3YWBgPIcxe9ynJ1w/8zrUXj/543UMDAyMYNM57zp0YmBgYNwVcJNcsr3nP/zfwMDA+CrGLCndh+Mk4N6ci2NgYHwhY9YY+De//3p/AwMD48cz3uXavH7W4Ix2hYGBcTRjU9ZPUtx2wCIf43gleS0GBsZjGG2rchOmkwLcx7djYGA8htEmkPmL28JZG/QxMDCewJiNfLXpbpvoFgEaAwPjUEa+oU3Lsx2qaD8iBgbG2YxNOppTkyv7ZgMGBsbTGHkqu2k9FkX//KCJgYFxKGO/lTzU5iW2OtxjYGAcyshLY+2QxOyeWXsAAwPjbEb+B5u0tk2AZyNrGBgYpzI2bcv22Jd/rHpADQMD42jGLCzmV+5qD+TjGhgYGKcyZiWzZNN58pmn01FjAAMD4zjGZvCr7pSux8KKJisGBsYRjM3QQ3vP5v46sGJgYBzHyJuOs7LaJphGHxoDA+NoRvvKvHzWhvh2YWBgPIfxLtfmiNmOoBWlPQwMjKMZmzg9K6XtByxWwRoDA+NrGW0boCW1wxOzIiAGBsYTGHnZKy+N5Ye8G4I+BgYGxijJ3ITgvMCHgYGBsW83tkfD2eEVAwPjCYw2zM3aCUVS2pbqMDAwjma0CWQbImfjGvcmwBgYGF/L+AVs66h2AWBluQAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
