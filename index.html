@@ -129,7 +129,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -163,6 +163,54 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-JS基础" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-09-09 21:13:29" datetime="2019-09-09T13:13:29.584Z" itemprop="datePublished">2019-09-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/09/09/JS基础/">No title</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        JS基础标签（空格分隔）： JS
+
+1.闭包1.1闭包是什么闭包是指有权访问另一个函数作用域的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。
+function outer(){
+    var i=0;
+    return function(){
+        console.log(i++);
+    }
+}
+var getNum = outer();
+getNum...
+    
+
+        <a href="/2019/09/09/JS基础/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-多方式实现三栏布局" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -188,15 +236,14 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        前端知识##1.用最多的方式实现三栏布局？
-&lt;div class=&quot;container&quot;&gt;
+        前端知识1.用最多的方式实现三栏布局？&lt;div class=&quot;container&quot;&gt;
     &lt;div class=&quot;center&quot;&gt;center&lt;/div&gt;
     &lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;
-    &lt;div class=&qu...
+    &lt;div class=&quot;...
     
 
         <a href="/2019/09/08/多方式实现三栏布局/" class="post-more waves-effect waves-button">
-            続きを読む…
+            Continue reading...
         </a>
     </div>
     
@@ -249,7 +296,7 @@
     
 
         <a href="/2019/03/29/页面布局/三栏布局/三栏布局之grid/" class="post-more waves-effect waves-button">
-            続きを読む…
+            Continue reading...
         </a>
     </div>
     
@@ -299,7 +346,7 @@
     
 
         <a href="/2019/03/29/页面布局/三栏布局/三栏布局之flex/" class="post-more waves-effect waves-button">
-            続きを読む…
+            Continue reading...
         </a>
     </div>
     
@@ -350,7 +397,7 @@
     
 
         <a href="/2019/03/29/页面布局/三栏布局/三栏布局之absolute/" class="post-more waves-effect waves-button">
-            続きを読む…
+            Continue reading...
         </a>
     </div>
     
@@ -402,7 +449,7 @@
     
 
         <a href="/2019/03/29/页面布局/三栏布局/三栏布局之float+box sizong+background-clip/" class="post-more waves-effect waves-button">
-            続きを読む…
+            Continue reading...
         </a>
     </div>
     
@@ -449,7 +496,7 @@
     
 
         <a href="/2019/03/29/页面布局/三栏布局/" class="post-more waves-effect waves-button">
-            続きを読む…
+            Continue reading...
         </a>
     </div>
     
@@ -499,7 +546,7 @@
     
 
         <a href="/2019/03/29/页面布局/三栏布局/2.1圣杯布局/" class="post-more waves-effect waves-button">
-            続きを読む…
+            Continue reading...
         </a>
     </div>
     
@@ -551,7 +598,7 @@
     
 
         <a href="/2019/03/29/页面布局/页面布局demo/1.4去除列表最后一个li元素的border-bottom/" class="post-more waves-effect waves-button">
-            続きを読む…
+            Continue reading...
         </a>
     </div>
     
@@ -603,60 +650,7 @@
     
 
         <a href="/2019/03/29/页面布局/页面布局demo/1.3负边距加定位实现水平垂直居中/" class="post-more waves-effect waves-button">
-            続きを読む…
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-页面布局/页面布局demo/1.2去除列表右边框" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2019-03-29 10:15:12" datetime="2019-03-29T02:15:12.594Z" itemprop="datePublished">2019-03-29</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2019/03/29/页面布局/页面布局demo/1.2去除列表右边框/">No title</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-
-  
-    
-    去除列表右边框
-    
-      *{
-        margin:0;
-        padding:0;
-      }
-      .div1{
-        width:780px;
-        height:380px;
-        margin:0 auto;
-        border:3px solid skyblue;
-   ...
-    
-
-        <a href="/2019/03/29/页面布局/页面布局demo/1.2去除列表右边框/" class="post-more waves-effect waves-button">
-            続きを読む…
+            Continue reading...
         </a>
     </div>
     
@@ -669,7 +663,7 @@
     
 <nav id="page-nav">
     <div class="inner">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
     </div>
 </nav>
 
@@ -693,7 +687,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
