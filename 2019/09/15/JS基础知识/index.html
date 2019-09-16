@@ -44,7 +44,8 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/15/ngG1OK.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/15/ngGX11.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/15/ngJ7KP.png">
-<meta property="og:updated_time" content="2019-09-15T08:48:06.615Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/16/nWHjds.gif">
+<meta property="og:updated_time" content="2019-09-16T08:41:07.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS基础知识">
 <meta name="twitter:description" content="get 和 post的区别                                                                                             ngCI6x.png              [">
@@ -189,7 +190,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#get-和-post的区别"><span class="post-toc-number">1.</span> <span class="post-toc-text">get 和 post的区别</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#闭包"><span class="post-toc-number">2.</span> <span class="post-toc-text">闭包</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用闭包-封装私有变量"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">使用闭包-封装私有变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用闭包-回调函数"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">使用闭包-回调函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#闭包的缺点"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">闭包的缺点</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#对象的创建方式"><span class="post-toc-number">3.</span> <span class="post-toc-text">对象的创建方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字面量"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">字面量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object构造函数"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">Object构造函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#工厂模式"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">工厂模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#构造函数模式"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">构造函数模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原型模式"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">原型模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#组合使用构造函数模式和原型模式"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">组合使用构造函数模式和原型模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#动态原型模式"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">动态原型模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#寄生构造函数模式"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">寄生构造函数模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#稳妥构造函数模式"><span class="post-toc-number">3.9.</span> <span class="post-toc-text">稳妥构造函数模式</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#继承"><span class="post-toc-number">4.</span> <span class="post-toc-text">继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原型链"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">原型链</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#借用构造函数"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">借用构造函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#组合继承"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">组合继承</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原型式继承"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">原型式继承</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#寄生式继承"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">寄生式继承</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#寄生组合式继承"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">寄生组合式继承</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#如何解决异步回调地狱"><span class="post-toc-number">5.</span> <span class="post-toc-text">如何解决异步回调地狱</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Promise"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Promise</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Generator"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">Generator</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#async-await"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">async/await</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前端事件流"><span class="post-toc-number">6.</span> <span class="post-toc-text">前端事件流</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IE事件流"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">IE事件流</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Netscape事件捕获"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">Netscape事件捕获</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM级事件"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">DOM级事件</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#事件处理程序"><span class="post-toc-number">7.</span> <span class="post-toc-text">事件处理程序</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HTML事件处理程序"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">HTML事件处理程序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM0级事件处理程序"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">DOM0级事件处理程序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM2级事件处理程序"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">DOM2级事件处理程序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IE事件处理程序"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">IE事件处理程序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#跨浏览器的事件处理程序"><span class="post-toc-number">7.5.</span> <span class="post-toc-text">跨浏览器的事件处理程序</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#如何让事件先冒泡后捕获"><span class="post-toc-number">8.</span> <span class="post-toc-text">如何让事件先冒泡后捕获</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#事件委托"><span class="post-toc-number">9.</span> <span class="post-toc-text">事件委托</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#图片懒加载和预加载"><span class="post-toc-number">10.</span> <span class="post-toc-text">图片懒加载和预加载</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#get-和-post的区别"><span class="post-toc-number">1.</span> <span class="post-toc-text">get 和 post的区别</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#闭包"><span class="post-toc-number">2.</span> <span class="post-toc-text">闭包</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用闭包-封装私有变量"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">使用闭包-封装私有变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用闭包-回调函数"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">使用闭包-回调函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#闭包的缺点"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">闭包的缺点</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#对象的创建方式"><span class="post-toc-number">3.</span> <span class="post-toc-text">对象的创建方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字面量"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">字面量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object构造函数"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">Object构造函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#工厂模式"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">工厂模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#构造函数模式"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">构造函数模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原型模式"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">原型模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#组合使用构造函数模式和原型模式"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">组合使用构造函数模式和原型模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#动态原型模式"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">动态原型模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#寄生构造函数模式"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">寄生构造函数模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#稳妥构造函数模式"><span class="post-toc-number">3.9.</span> <span class="post-toc-text">稳妥构造函数模式</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#继承"><span class="post-toc-number">4.</span> <span class="post-toc-text">继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原型链"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">原型链</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#借用构造函数"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">借用构造函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#组合继承"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">组合继承</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原型式继承"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">原型式继承</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#寄生式继承"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">寄生式继承</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#寄生组合式继承"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">寄生组合式继承</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#如何解决异步回调地狱"><span class="post-toc-number">5.</span> <span class="post-toc-text">如何解决异步回调地狱</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Promise"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Promise</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Generator"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">Generator</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#async-await"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">async/await</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前端事件流"><span class="post-toc-number">6.</span> <span class="post-toc-text">前端事件流</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IE事件流"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">IE事件流</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Netscape事件捕获"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">Netscape事件捕获</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM级事件"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">DOM级事件</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#事件处理程序"><span class="post-toc-number">7.</span> <span class="post-toc-text">事件处理程序</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HTML事件处理程序"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">HTML事件处理程序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM0级事件处理程序"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">DOM0级事件处理程序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM2级事件处理程序"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">DOM2级事件处理程序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IE事件处理程序"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">IE事件处理程序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#跨浏览器的事件处理程序"><span class="post-toc-number">7.5.</span> <span class="post-toc-text">跨浏览器的事件处理程序</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#如何让事件先冒泡后捕获"><span class="post-toc-number">8.</span> <span class="post-toc-text">如何让事件先冒泡后捕获</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#事件委托"><span class="post-toc-number">9.</span> <span class="post-toc-text">事件委托</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#图片懒加载和预加载"><span class="post-toc-number">10.</span> <span class="post-toc-text">图片懒加载和预加载</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#图片预加载"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">图片预加载</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方法一：用CSS实现预加载"><span class="post-toc-number">10.1.1.</span> <span class="post-toc-text">方法一：用CSS实现预加载</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方法二："><span class="post-toc-number">10.1.2.</span> <span class="post-toc-text">方法二：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方法三：使用javascript实现"><span class="post-toc-number">10.1.3.</span> <span class="post-toc-text">方法三：使用javascript实现</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方法四：使用Ajax实现预加载"><span class="post-toc-number">10.1.4.</span> <span class="post-toc-text">方法四：使用Ajax实现预加载</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#图片懒加载实现"><span class="post-toc-number">10.2.</span> <span class="post-toc-text">图片懒加载实现</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#mouseover和mouseenter的区别"><span class="post-toc-number">11.</span> <span class="post-toc-text">mouseover和mouseenter的区别</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#this"><span class="post-toc-number">12.</span> <span class="post-toc-text">this</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#全局作用域或者普通函数中this指向全局对象window"><span class="post-toc-number">12.1.</span> <span class="post-toc-text">全局作用域或者普通函数中this指向全局对象window</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法调用中谁调用this指向谁"><span class="post-toc-number">12.2.</span> <span class="post-toc-text">方法调用中谁调用this指向谁</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在构造函数或构造函数原型对象中this指向构造函数的实例"><span class="post-toc-number">12.3.</span> <span class="post-toc-text">在构造函数或构造函数原型对象中this指向构造函数的实例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#箭头函数中指向外层作用域的this"><span class="post-toc-number">12.3.1.</span> <span class="post-toc-text">箭头函数中指向外层作用域的this</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#改变函数内部this指针的指向函数"><span class="post-toc-number">13.</span> <span class="post-toc-text">改变函数内部this指针的指向函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#手写实现apply-call-bind"><span class="post-toc-number">13.1.</span> <span class="post-toc-text">手写实现apply,call,bind</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JS的各种位置"><span class="post-toc-number">14.</span> <span class="post-toc-text">JS的各种位置</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#合并对象"><span class="post-toc-number">15.</span> <span class="post-toc-text">合并对象</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#深拷贝和浅拷贝"><span class="post-toc-number">16.</span> <span class="post-toc-text">深拷贝和浅拷贝</span></a></li></ol>
         </nav>
     </aside>
 
@@ -358,7 +359,7 @@ var person2 = createPerson(&quot;Greg&quot;,27,&quot;Docror&quot;);
 }
 var person1 = new Person(&quot;Nicholas&quot;,29,&quot;Software Engineer&quot;);
 var person2 = new Person(&quot;Greg&quot;,27,&quot;Doctor&quot;);
-</code></pre><p>new一个对象会有哪几步：<br>（1）创建一个新对象<br>（2）将构造函数的作用域赋给新对象<br>（3）执行构造函数中的代码（为这个新对象添加属性）<br>（4）返回新对象</p>
+</code></pre><p>new一个对象会有哪几步：<br>（1）创建一个新对象<br>（2）将构造函数的作用域赋给新对象（只要使用构造函数创建一个子对象时，都会让子对象自动继承构造函数的原型对象）<br>（3）执行构造函数中的代码（为这个新对象添加属性）<br>（4）返回新对象地址，保存到变量中</p>
 <p>构造函数的问题：每个方法都要在每个实例上重新创建一遍。<br>解决：原型模式</p>
 <h2 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h2><p>prototype通过调用构造函数而创建的那个对象实例的原型对象。使用原型对象的好处是可以让所有对象shilling共享它所包含的属性和方法。</p>
 <p>构造函数与原型对象：只要创建了一个新函数，就会根据一组特定的规则为该函数创建一个 prototype属性，这个属性指向函数的原型对象。在默认情况下，所有原型对象都会自动获得一个 constructor（构造函数）属性，这个属性包含一个指向 prototype 属性所在函数的指针。</p>
@@ -393,7 +394,314 @@ var person2 = new Person(&quot;Greg&quot;,27,&quot;Doctor&quot;);
 <h1 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h1><p>事件委托是指不在事件的发生地上设置监听函数，而是在其父元素上设置监听函数，通过事件冒泡，父元素可以监听到子元素上事件的触发，通过判断事件发生元素DOM的类型，来做出不同的响应。</p>
 <p>对“事件处理程序过多”问题的解决方案就是事件委托。<br>事件委托利用了事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。</p>
 <p>优点：<br>（1）document对象很快可以访问，而且可以在页面生命周期的任何时点上为它添加事件处理程序。即只要可单击的元素呈现在页面上，就可以立即具备适当的功能。<br>（2）在页面中设置事件处理程序所需要的时间更少。只添加一个事件处理程序所需的DOM引用更少，所花的时间也更少。<br>（3）整个页面占用的内存空间更少，能够提升整体性能。</p>
-<h1 id="图片懒加载和预加载"><a href="#图片懒加载和预加载" class="headerlink" title="图片懒加载和预加载"></a>图片懒加载和预加载</h1>
+<h1 id="图片懒加载和预加载"><a href="#图片懒加载和预加载" class="headerlink" title="图片懒加载和预加载"></a>图片懒加载和预加载</h1><p>预加载：提前加载图片，当用户需要查看时可直接从本地缓存中渲染。<br>懒加载：主要目的是作为服务器前端优化，减少请求数或延迟请求数。<br>本质：两者的行为是相反的，一个是提前加载，一个是迟缓甚至不加载。<br>懒加载对服务器前端有一定的缓解压力作用，预加载则会增加服务器前端压力。</p>
+<h2 id="图片预加载"><a href="#图片预加载" class="headerlink" title="图片预加载"></a>图片预加载</h2><h3 id="方法一：用CSS实现预加载"><a href="#方法一：用CSS实现预加载" class="headerlink" title="方法一：用CSS实现预加载"></a>方法一：用CSS实现预加载</h3><pre><code>#preload-01 {background: url(http://domain.tld/images-01.png) no-repeat -9999px -9999px;}
+#preload-02 {background: url(http://domain.tld/images-02.png) no-repeat -9999px -9999px;}
+#preload-03 {background: url(http://domain.tld/images-03.png) no-repeat -9999px -9999px;}
+</code></pre><p>通过background属性将图片预加载到屏幕外的背景上。缺点是：该方法加载的图片会同页面的其他内容一起加载，增加了页面的整体加载时间。为了解决这个问题，增加JS代码，来推迟预加载的事件，直到页面加载完毕。</p>
+<h3 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h3><pre><code>function preloader(){
+    if(document.getElementById){
+        document.getElementById(&quot;preload-01&quot;).style.background = &quot;url(http://domain.tld/images-01.png) no-repeat -9999px -9999px;&quot;;
+        document.getElementById(&quot;preload-02&quot;).style.background = &quot;url(http://domain.tld/images-02.png) no-repeat -9999px -9999px;&quot;;
+        document.getElementById(&quot;preload-03&quot;).style.background = &quot;url(http://domain.tld/images-03.png) no-repeat -9999px -9999px;&quot;;
+    }
+}
+function addLoadEvent(func){
+    var oldonload = window.onload;
+    if(typeof window.onload != &#39;function&#39;){
+        window.onload = func;
+    }else{
+        window.onload = function(){
+            if(oldonload){
+                oldonload();
+            }
+            func();
+        }
+    }
+}
+addLoadEvent(preloader);
+</code></pre><h3 id="方法三：使用javascript实现"><a href="#方法三：使用javascript实现" class="headerlink" title="方法三：使用javascript实现"></a>方法三：使用javascript实现</h3><pre><code>function preloader(){
+    if(document.images){
+        var img1 = new Image();
+        var img2 = new Image();
+        var img3 = new Image();
+        img1.src = &quot;http://domain.tld/path/to/image-001.gif&quot;;
+        img2.src = &quot;http://domain.tld/path/to/image-002.gif&quot;;
+        img3.src = &quot;http://domain.tld/path/to/image-003.gif&quot;;
+    }
+}
+function addLoadEvent(func){
+    var oldonload = window.onload;
+    if(typeof window.onload != &#39;function&#39;){
+        window.onload = func;
+    }else{
+        window.onload  = function(){
+            if(oldonload){
+                oldonload();
+            }
+            func();
+        }
+    }
+}
+addLoadEvent(preloader);
+</code></pre><h3 id="方法四：使用Ajax实现预加载"><a href="#方法四：使用Ajax实现预加载" class="headerlink" title="方法四：使用Ajax实现预加载"></a>方法四：使用Ajax实现预加载</h3><pre><code>window.onload = function(){
+    setTimeout(function(){
+        var xhr = new XMLHttpRequest();
+        xhr.open(&#39;GET&#39;,&#39;http://domain.tld/preload.js&#39;);
+        xhr.send(&#39;&#39;);
+        xhr = new XMLHttpRequest();
+        xhr.open(&#39;GET&#39;,&#39;http://domain.tld/preload.css&#39;);
+        xhr.senf(&#39;&#39;);
+        new Image().src = &quot;http://domain.tld/preload.png&quot;;
+    },1000);
+}
+
+
+
+window.onload = function() {
+
+    setTimeout(function() {
+
+        // reference to &lt;head&gt;
+        var head = document.getElementsByTagName(&#39;head&#39;)[0];
+
+        // a new CSS
+        var css = document.createElement(&#39;link&#39;);
+        css.type = &quot;text/css&quot;;
+        css.rel  = &quot;stylesheet&quot;;
+        css.href = &quot;http://domain.tld/preload.css&quot;;
+
+        // a new JS
+        var js  = document.createElement(&quot;script&quot;);
+        js.type = &quot;text/javascript&quot;;
+        js.src  = &quot;http://domain.tld/preload.js&quot;;
+
+        // preload JS and CSS
+        head.appendChild(css);
+        head.appendChild(js);
+
+        // preload image
+        new Image().src = &quot;http://domain.tld/preload.png&quot;;
+
+    }, 1000);
+
+};
+</code></pre><h2 id="图片懒加载实现"><a href="#图片懒加载实现" class="headerlink" title="图片懒加载实现"></a>图片懒加载实现</h2><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .gallery{
+            text-align: center;
+        }
+        img{
+            width:327px;
+            height:275px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;gallery&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/1.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/2.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/4.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/5.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/6.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/7.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/8.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/1.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/2.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/4.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/5.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/6.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/7.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/8.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/1.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/2.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/4.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/5.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/6.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/7.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/8.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/1.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/2.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/4.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/5.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/6.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/7.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/8.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/1.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/2.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/4.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/5.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/6.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/7.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/8.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/1.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/2.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/4.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/5.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/6.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/7.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;img src=&quot;./img/0.jpg&quot; data-src=&quot;./img/8.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;https://cdn.bootcss.com/jquery/3.3.1/jquery.js&quot;&gt;&lt;/script&gt;
+
+    &lt;script&gt;
+    /*判断当前图片是否是在可视区域*/
+    $(window).scroll(handleScroll);
+    function handleScroll(){
+        let imgs = $(&#39;img[data-src]&#39;);
+        let bodyScrollHeight = document.scrollTop || document.documentElement.scrollTop;//获取网页卷去的高度，即网页滚动的位置
+        let windowHeight = window.innerHeight;  //当前视口的高度
+        for(let i=0;i&lt;imgs.length;i++){
+            let imgHeight = $(imgs[i]).offset().top;//每一张图片距离顶部的坐标
+            console.log(imgHeight);
+            //当前图片距离页面顶部的距离 &lt; 视口高度+卷去的高度
+            if(imgHeight&lt;windowHeight+bodyScrollHeight &amp;&amp; imgHeight&gt;=bodyScrollHeight){
+                setTimeout(function() {
+                    $(imgs).eq(i).attr(&#39;src&#39;,$(imgs).eq(i).attr(&#39;data-src&#39;));
+                },1000)
+            }
+        }
+    }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h1 id="mouseover和mouseenter的区别"><a href="#mouseover和mouseenter的区别" class="headerlink" title="mouseover和mouseenter的区别"></a>mouseover和mouseenter的区别</h1><p>mouseover：当鼠标移入元素或其子元素都会触发事件，所以有一个重复触发，冒泡过程。对应的移除事件是mouseout.(不论鼠标指针穿过被选元素或其子元素，都会触发mouseover事件)<br>mouseenter:当事件移除元素本身（不包含元素的子元素）会触发事件，也就是不会冒泡，对应的移除事件是mouseleave.（只有在鼠标指针穿过被选元素时，才会触发mouseenter事件）</p>
+<h1 id="this"><a href="#this" class="headerlink" title="this"></a>this</h1><h2 id="全局作用域或者普通函数中this指向全局对象window"><a href="#全局作用域或者普通函数中this指向全局对象window" class="headerlink" title="全局作用域或者普通函数中this指向全局对象window"></a>全局作用域或者普通函数中this指向全局对象window</h2><pre><code>//直接打印
+console.log(this) //window
+
+//function声明函数
+function bar () {console.log(this)}
+bar() //window
+
+//function声明函数赋给变量
+var bar = function () {console.log(this)}
+bar() //window
+
+//自执行函数
+(function () {console.log(this)})(); //window
+</code></pre><h2 id="方法调用中谁调用this指向谁"><a href="#方法调用中谁调用this指向谁" class="headerlink" title="方法调用中谁调用this指向谁"></a>方法调用中谁调用this指向谁</h2><pre><code>//对象方法调用
+var person = {
+  run: function () {console.log(this)}
+}
+person.run() // person
+
+//事件绑定
+var btn = document.querySelector(&quot;button&quot;)
+btn.onclick = function () {
+  console.log(this) // btn
+}
+//事件监听
+var btn = document.querySelector(&quot;button&quot;)
+btn.addEventListener(&#39;click&#39;, function () {
+  console.log(this) //btn
+})
+
+//jquery的ajax
+$.ajax({
+  self: this,
+  type: &quot;get&quot;,
+  url: url,
+  async: true,
+  success: function (res) {
+    console.log(this) // this指向传入$.ajxa()中的对象
+    console.log(self) // window
+  }
+});
+//这里说明以下，将代码简写为$.ajax（obj） ，this指向obj,在obj中this指向window，因为在在success方法中，独享obj调用自己，所以this指向obj
+</code></pre><h2 id="在构造函数或构造函数原型对象中this指向构造函数的实例"><a href="#在构造函数或构造函数原型对象中this指向构造函数的实例" class="headerlink" title="在构造函数或构造函数原型对象中this指向构造函数的实例"></a>在构造函数或构造函数原型对象中this指向构造函数的实例</h2><pre><code>//不使用new指向window
+function Person(name) {
+  console.log(this) // window
+  this.name = name;
+}
+Person(&#39;inwe&#39;)
+//使用new
+function Person(name) {
+  this.name = name
+  console.log(this) //people
+  self = this
+}
+var people = new Person(&#39;iwen&#39;)
+console.log(self === people) //true
+//这里new改变了this指向，将this由window指向Person的实例对象people
+</code></pre><h3 id="箭头函数中指向外层作用域的this"><a href="#箭头函数中指向外层作用域的this" class="headerlink" title="箭头函数中指向外层作用域的this"></a>箭头函数中指向外层作用域的this</h3><pre><code>var obj = {
+  foo() {
+    console.log(this);
+  },
+  bar: () =&gt; {
+    console.log(this);
+  }
+}
+
+obj.foo() // {foo: ƒ, bar: ƒ}
+obj.bar() // window
+</code></pre><h1 id="改变函数内部this指针的指向函数"><a href="#改变函数内部this指针的指向函数" class="headerlink" title="改变函数内部this指针的指向函数"></a>改变函数内部this指针的指向函数</h1><p>通过apply和call改变函数的this指向，他们两个函数的第一个参数都是一样的表示要改变指向的那个对象;第二个是传入的参数，apply是数组，而call则是arg1,arg2…这种形式。<br>通过bind改变this作用域会返回一个新的函数（我理解的是bind不改变原函数，再var一个新的函数拿来用。），这个函数不会马上执行。call 是把第二个及以后的参数作为 func 方法的实参传进去，而 func1 方法的实参实则是在 bind 中参数的基础上再往后排。</p>
+<p>总结：<br>当我们使用一个函数需要改变this指向的时候才会用到callapplybind<br>如果你要传递的参数不多，则可以使用fn.call(thisObj, arg1, arg2 …)<br>如果你要传递的参数很多，则可以用数组将参数整理好调用fn.apply(thisObj, [arg1, arg2 …])<br>如果你想生成一个新的函数长期绑定某个函数给某个对象使用，则可以使用const newFn = fn.bind(thisObj); newFn(arg1, arg2…)<br>call和apply第一个参数为null/undefined，函数this指向全局对象，在浏览器中是window，在node中是global</p>
+<h2 id="手写实现apply-call-bind"><a href="#手写实现apply-call-bind" class="headerlink" title="手写实现apply,call,bind"></a>手写实现apply,call,bind</h2><pre><code>Function.prototype.bind = function(context, ...bindArgs) {
+  // func 为调用 bind 的原函数
+  const func = this;
+  context = context || window;
+
+  if (typeof func !== &#39;function&#39;) {
+    throw new TypeError(&#39;Bind must be called on a function&#39;);
+  }
+  // bind 返回一个绑定 this 的函数
+  return function(...callArgs) {
+    let args = bindArgs.concat(callArgs);
+    if (this instanceof func) {
+      // 意味着是通过 new 调用的 而 new 的优先级高于 bind
+      return new func(...args);
+    }
+    return func.call(context, ...args);
+  }
+}
+
+// 通过隐式绑定实现
+Function.prototype.call = function(context, ...args) {
+  context = context || window;
+  context.func = this;
+
+  if (typeof context.func !== &#39;function&#39;) {
+    throw new TypeError(&#39;call must be called on a function&#39;);
+  }
+
+  let res = context.func(...args);
+  delete context.func;
+  return res;
+}
+
+Function.prototype.apply = function(context, args) {
+  context = context || window;
+  context.func = this;
+
+  if (typeof context.func !== &#39;function&#39;) {
+    throw new TypeError(&#39;apply must be called on a function&#39;);
+  }
+
+  let res = context.func(...args);
+  delete context.func;
+  return res;
+}
+
+作者：我不吃饼干呀
+链接：https://juejin.im/post/5c9edb066fb9a05e267026dc
+来源：掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+</code></pre><h1 id="JS的各种位置"><a href="#JS的各种位置" class="headerlink" title="JS的各种位置"></a>JS的各种位置</h1><p>clientHeight:表示可视区的高度，不包含border和滚动条<br>offsetHeight:表示可视区的高度，包含了border和滚动条<br>scrollHeight:表示所有区域的高度，包含了因为滚动被隐藏的部分。<br>clientTop:表示边框border的厚度，在未指定的情况下一般为0.<br>scrollTop:滚动后被隐藏的高度，获取对象相当于由offsetParent属性指定的父坐标</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2019/09/16/nWHjds.gif" alt="nWHjds.gif" title>
+                </div>
+                <div class="image-caption">nWHjds.gif</div>
+            </figure>
+<h1 id="合并对象"><a href="#合并对象" class="headerlink" title="合并对象"></a>合并对象</h1><h1 id="深拷贝和浅拷贝"><a href="#深拷贝和浅拷贝" class="headerlink" title="深拷贝和浅拷贝"></a>深拷贝和浅拷贝</h1><p># </p>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -401,7 +709,7 @@ var person2 = new Person(&quot;Greg&quot;,27,&quot;Doctor&quot;);
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-09-15T08:48:06.615Z" itemprop="dateUpdated">2019-09-15 16:48:06</time>
+    Last updated: <time datetime="2019-09-16T08:41:07.077Z" itemprop="dateUpdated">2019-09-16 16:41:07</time>
 </span><br>
 
 
