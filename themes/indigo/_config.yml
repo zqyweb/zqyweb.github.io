@@ -19,10 +19,10 @@ menu:
     text: Categories
     url: /categories
   github:
-    url: https://github.com/yscoder
+    url: https://zqyweb.github.io
     target: _blank
-  weibo:
-    url: http://www.weibo.com/ysweb
+  CSDN:
+    url: https://blog.csdn.net/weixin_44748964
     target: _blank
   link:
     text: 测试
@@ -38,7 +38,7 @@ brand: /img/brand.jpg
 favicon: /favicon.ico
 
 # email
-email: 634206017@qq.com
+email: 1398839951@qq.com
 
 # 设置 Android L Chrome 浏览器状态栏颜色
 color: '#3F51B5'
@@ -159,8 +159,8 @@ visit_counter:
 
 # 动态定义title
 title_change:
-  normal: (つェ⊂)咦!又好了!
-  leave: 死鬼去哪里了！
+  normal: 正常状态
+  leave: 出错了
 
 # 设置为 true 发布后将使用 unpkg cdn 最新的主题样式
 # 如果想让你的自定义样式生效，把此项设为 false
