@@ -3,8 +3,8 @@ diff a/_config.yml b/_config.yml	(rejected hunks)
  subtitle:
  description:
  keywords:
--author: John Doe
-+author: Zhang Quan yu
+-author: Zhang Quan yu
++author: John Doe
  language:
  timezone:
  
