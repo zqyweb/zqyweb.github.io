@@ -1,0 +1,12 @@
+diff a/_config.yml.rej b/_config.yml.rej	(rejected hunks)
+@@ -3,8 +3,8 @@
+  subtitle:
+  description:
+  keywords:
+--author: John Doe
+-+author: Zhang Quan yu
++-author: Zhang Quan yu
+++author: John Doe
+  language:
+  timezone:
+  
